@@ -1,10 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from "react-router-dom";
+import { GeppettoApp } from './GeppettoApp';
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <p>HOLA MUNDO!</p>
-    <p>I'm GEPPETTO :D</p>
+    <BrowserRouter>
+      <GeppettoApp/>
+    </BrowserRouter>
   </React.StrictMode>,
 )
