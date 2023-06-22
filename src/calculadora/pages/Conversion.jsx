@@ -1,69 +1,94 @@
 import axios from "axios";
-import { InputNumber } from "../components";
-import { useForm } from "../hooks";
+import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
+import { Button } from "flowbite-react";
+import { NavbarGPTO } from "../components";
+import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 
-const formData = { numero: "", baseInicial: "", baseFinal: "" };
+const ops = Array.from({ length: 62 }, (_, i) => ({
+  label: `${i + 2}`,
+  value: i + 2,
+}));
 
 export const Conversion = () => {
-  const { numero, baseInicial, baseFinal, onInputChange } = useForm(formData);
+  const { register, handleSubmit } = useForm();
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    const res = await axios.post(`${import.meta.env}cbase`,{ "_num":parseInt(numero), "_numFrom":baseInicial, "_numTo":baseFinal })
-    alert(res);
+  const onSubmit = async ({ numero, baseInicial, baseFinal }) => {
+    //console.log({ numero, baseInicial, baseFinal });
+    const { data: datos } = await axios.post(
+      `${import.meta.env.VITE_APIURL}cbase/`,
+      {
+        _num: numero,
+        base_from: parseInt(baseInicial),
+        base_to: parseInt(baseFinal),
+      }
+    );
+
+    Swal.fire(`${datos.Mensaje} resultado: ${datos.Numero}`);
   };
 
   return (
     <>
-      <p>Hola Mundo</p>
-      <p>I'm GEPPETTO!</p>
+      <NavbarGPTO />
+      <div className="container ">
+        <div className="flex mt-4 mx-auto">
+          <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
+            <div className="flex">
+              <div className="mr-2">
+                <label htmlFor="numero" className="block text-sm font-medium">
+                  Valor a Convertir:
+                </label>
+                <input
+                  id="numero"
+                  {...register("numero")}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
 
-      <form onSubmit={onSubmit}>
-        <label htmlFor="numero">Valor a Convertir: </label>
-        <input name="numero" value={numero} onChange={onInputChange} required />
-        <br />
-        <br />
-        <label htmlFor="baseInicial">Base Inicial: </label>
-        <input
-          name="baseInicial"
-          value={baseInicial}
-          onChange={onInputChange}
-        />
-        <br />
-        <br />
+              <div className="mr-2">
+                <label
+                  htmlFor="baseInicial"
+                  className="block text-sm font-medium"
+                >
+                  Base Inicial:
+                </label>
+                <select
+                  id="baseInicial"
+                  {...register("baseInicial")}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                >
+                  {ops.map((op) => (
+                    <option key={op.value} value={op.value}>
+                      {op.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
 
-        <label htmlFor="baseFinal">Base Final: </label>
-        <input
-          name="baseFinal"
-          value={baseFinal}
-          onChange={onInputChange}
-          required
-        />
+            <div className="mt-2">
+              <label htmlFor="baseFinal" className="block text-sm font-medium">
+                Base Final:{" "}
+              </label>
+              <select
+                id="baseFinal"
+                {...register("baseFinal")}
+                className="w-52 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              >
+                {ops.map((op) => (
+                  <option key={op.value} value={op.value}>
+                    {op.label}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-        {/* <InputNumber
-          label="Numero A Convertir"
-          name="numero"
-          value={numero}
-          evento={onInputChange}
-          required
-        /> */}
-        {/* <InputNumber
-          label="Base Inicial"
-          name="baseInicial"
-          value={baseInicial}
-          onChange={onInputChange}
-          required
-        />
-        <InputNumber
-          label="Base FInal"
-          name="baseFinal"
-          value={baseFinal}
-          onChange={onInputChange}
-          required
-        /> */}
-
-        <button>Guardar</button>
-      </form>
+            <Button type="submit" className="bg-light-accent mt-3">
+              Calcular <Cog8ToothIcon className="h-6 w-6 text-light" />
+            </Button>
+          </form>
+        </div>
+      </div>
     </>
   );
 };
