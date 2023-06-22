@@ -1,15 +1,10 @@
-export const InputNumber = ({ label = "", name = "", valor = "", evento }) => {
 
-    const handleEvent = () => {
-        evento
-    }
+export const InputNumber = ({ label = ""}) => {
 
   return (
     <>
       <label htmlFor="">{label}</label>
-      <input type="number" name={name} value={valor} onChange={evento} />
-      <br />
-      <br />
+      <input type="number"/>
     </>
   );
 };
