@@ -1,10 +1,10 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import {Conversion} from "../pages"
+import {ConversionPage} from "../pages"
 export const GeppettoRoutes = () => {
     return (
         <Routes>
-            <Route path="/" element={<Conversion/>} />
-            <Route path="/*" element={<Navigate to="/"/>} />
+            <Route path="/convert" element={<ConversionPage/>} />
+            <Route path="/*" element={<Navigate to="/convert"/>} />
         </Routes>
     )
 }
