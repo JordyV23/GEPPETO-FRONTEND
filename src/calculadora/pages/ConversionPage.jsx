@@ -45,15 +45,13 @@ export const ConversionPage = () => {
         <NavbarGPTO /> 
 
 
-      <div className="flex flex-1 items-center">
+      <div className="flex">
           <SidebarGPTO /> 
 
        
           <div className="p-4 sm:ml-64">
-            <div className="p-4 border-2 items-center justify-center border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-              <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-                <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
-              </div>
+            <div className="p-4 border-2 items-center justify-center border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-20">
+              <div className="flex items-center justify-center h-68 mb-4 rounded ">
               <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
                 <div className="flex">
                   <div className="mr-2">
@@ -127,6 +125,7 @@ export const ConversionPage = () => {
                   Calcular <Cog8ToothIcon className="h-6 w-6 text-light" />
                 </Button>
               </form>
+              </div>
             </div>
           </div>
         </div>
