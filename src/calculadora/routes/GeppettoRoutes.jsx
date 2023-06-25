@@ -4,7 +4,7 @@ export const GeppettoRoutes = () => {
     return (
         <Routes>
             <Route path="/convert" element={<ConversionPage/>} />
-            <Route path="/*" element={<Navigate to="/convert"/>} />
+            <Route path="/*" element={<Navigate to="/geppetto/convert"/>} />
         </Routes>
     )
 }
