@@ -1,5 +1,4 @@
 import axios from "axios";
-import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
 import { NavbarGPTO,SidebarGPTO } from "../components";
@@ -7,6 +6,8 @@ import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'animate.css'
+import 'hover.css'
 
 const ops = Array.from({ length: 61 }, (_, i) => ({
   label: `${i + 2}`,
@@ -27,29 +28,27 @@ export const ConversionPage = () => {
       }
     );
 
-    console.log(datos);
     if (datos.Status == "True") {
       setResultado(datos.Numero);
       return;
     }
     toast("Revisa tu conversion :c");
-    //Swal.fire({ icon: "error", title: "Error", text: `Revisa tu conversion` });
   };
 
   return (
     <>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen animate__animated animate__fadeIn">
         <NavbarGPTO />
 
         <div className="flex">
           <SidebarGPTO />
 
-          <div className="p-4 sm:ml-64">
-            <div className="p-4 border-2 items-center justify-center border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-20">
+          <div className="p-4 sm:ml-64 w-8/12">
+            <div className="p-4 border-2 items-center w-full justify-center border-white border-dashed rounded-lg dark:border-white mt-20">
               <div className="flex items-center justify-center h-68 mb-4 rounded ">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
                   <div className="flex">
-                    <div className="mr-2">
+                    <div className="mr-2 w-96">
                       <label
                         htmlFor="numero"
                         className="block text-sm font-medium dark:text-white"
@@ -63,12 +62,12 @@ export const ConversionPage = () => {
                       />
                     </div>
 
-                    <div className="mr-2">
+                    <div className="ml-6 mr-2 w-96">
                       <label
                         htmlFor="baseInicial"
                         className="block text-sm font-medium dark:text-white"
                       >
-                        Base Inicial:
+                        Base:
                       </label>
                       <select
                         id="baseInicial"
@@ -106,7 +105,7 @@ export const ConversionPage = () => {
 
                   <label
                     htmlFor="resultado"
-                    className="block text-sm font-medium dark:text-white"
+                    className="block text-sm font-medium dark:text-white mt-3"
                   >
                     Resultado:
                   </label>
@@ -117,8 +116,8 @@ export const ConversionPage = () => {
                     value={resultado}
                   />
 
-                  <Button type="submit" className="bg-light-accent dark:bg-dark-accent mt-3">
-                    Calcular <Cog8ToothIcon className="h-6 w-6 text-light" />
+                  <Button type="submit" className="bg-light-accent dark:bg-dark-accent mt-3 mx-auto px-3 py-3 hvr-grow hvr-icon-spin">
+                    Calcular <Cog8ToothIcon className="h-6 w-6 text-light hvr-icon" />
                   </Button>
                 </form>
                 <ToastContainer />

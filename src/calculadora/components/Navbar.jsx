@@ -5,7 +5,7 @@ import { ThemeSwitch } from "./ThemeSwitch";
 export const NavbarGPTO = () => {
 
   return (
-    <nav className="fixed top-4 z-50 w-10/12 bg-light-accent border-b border-light-accent rounded-xl dark:bg-dark-accent dark:border-dark-accent">
+    <nav className="fixed ml-3 z-50 w-10/12 bg-light-accent border-b border-light-accent rounded-xl dark:bg-dark-accent dark:border-dark-accent">
       <div className="px-3 py-3 lg:px-5 lg:pl-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-start">
