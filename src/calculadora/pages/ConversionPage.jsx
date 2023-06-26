@@ -2,10 +2,11 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
-import { NavbarGPTO } from "../components";
+import { NavbarGPTO,SidebarGPTO } from "../components";
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
-import { SidebarGPTO } from "../components/Sidebar";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ops = Array.from({ length: 61 }, (_, i) => ({
   label: `${i + 2}`,
@@ -31,7 +32,8 @@ export const ConversionPage = () => {
       setResultado(datos.Numero);
       return;
     }
-    Swal.fire({ icon: "error", title: "Error", text: `Revisa tu conversion` });
+    toast("Revisa tu conversion :c");
+    //Swal.fire({ icon: "error", title: "Error", text: `Revisa tu conversion` });
   };
 
   return (
@@ -50,7 +52,7 @@ export const ConversionPage = () => {
                     <div className="mr-2">
                       <label
                         htmlFor="numero"
-                        className="block text-sm font-medium"
+                        className="block text-sm font-medium dark:text-white"
                       >
                         Valor a Convertir:
                       </label>
@@ -64,7 +66,7 @@ export const ConversionPage = () => {
                     <div className="mr-2">
                       <label
                         htmlFor="baseInicial"
-                        className="block text-sm font-medium"
+                        className="block text-sm font-medium dark:text-white"
                       >
                         Base Inicial:
                       </label>
@@ -85,7 +87,7 @@ export const ConversionPage = () => {
                   <div className="mt-2">
                     <label
                       htmlFor="baseFinal"
-                      className="block text-sm font-medium"
+                      className="block text-sm font-medium dark:text-white"
                     >
                       Base Final:{" "}
                     </label>
@@ -104,7 +106,7 @@ export const ConversionPage = () => {
 
                   <label
                     htmlFor="resultado"
-                    className="block text-sm font-medium"
+                    className="block text-sm font-medium dark:text-white"
                   >
                     Resultado:
                   </label>
@@ -115,10 +117,11 @@ export const ConversionPage = () => {
                     value={resultado}
                   />
 
-                  <Button type="submit" className="bg-light-accent mt-3">
+                  <Button type="submit" className="bg-light-accent dark:bg-dark-accent mt-3">
                     Calcular <Cog8ToothIcon className="h-6 w-6 text-light" />
                   </Button>
                 </form>
+                <ToastContainer />
               </div>
             </div>
           </div>

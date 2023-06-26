@@ -14,7 +14,7 @@ export const SidebarGPTO = () => {
         data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
         type="button"
-        className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-light-accent rounded-lg sm:hidden hover:bg-light-accent-2 focus:outline-none focus:ring-2"
+        className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-light-accent rounded-lg sm:hidden hover:bg-light-accent-2 focus:outline-none focus:ring-2 dark:text-dark-accent dark:hover:bg-dark-accent"
       >
         <span className="sr-only">Open sidebar</span>
         <svg
@@ -37,7 +37,7 @@ export const SidebarGPTO = () => {
         className="fixed top-0 left-0 z-40 w-64 h-screen rounded-lg transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
-        <div className="h-full px-3 py-4 overflow-y-auto bg-light-accent dark:bg-gray-800">
+        <div className="h-full px-3 py-4 overflow-y-auto bg-light-accent dark:bg-dark-accent">
           <ul className="space-y-2 font-medium">
             <li className="mt-16">
               <a
