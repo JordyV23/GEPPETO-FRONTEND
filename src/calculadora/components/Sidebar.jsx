@@ -42,7 +42,7 @@ export const SidebarGPTO = () => {
             <li className="mt-16">
               <a
                 href="#"
-                className="flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
+                className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
               >
                 <CalculatorIcon className="w-6 h-6 text-txt-light transition duration-75  group-hover:text-gray-900 " />
                 <span className="flex-1 ml-3 whitespace-nowrap">Modulo 1</span>
@@ -51,7 +51,7 @@ export const SidebarGPTO = () => {
             <li>
               <a
                 href="#"
-                className="flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
+                className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
               >
                 <CpuChipIcon className="w-6 h-6 text-txt-light transition duration-75  group-hover:text-gray-900 " />
                 <span className="flex-1 ml-3 whitespace-nowrap">Modulo 2</span>
@@ -61,7 +61,7 @@ export const SidebarGPTO = () => {
             <li>
               <a
                 href="#"
-                className="flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
+                className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
               >
                 <ChatBubbleLeftRightIcon className="w-6 h-6 text-txt-light transition duration-75  group-hover:text-gray-900 " />
                 <span className="flex-1 ml-3 whitespace-nowrap">Modulo 3</span>
