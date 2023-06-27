@@ -48,7 +48,7 @@ export const ConversionPage = () => {
               <div className="flex items-center justify-center h-68 mb-4 rounded ">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
                   <div className="flex">
-                    <div className="mr-2 w-96">
+                    <div className="mr-2 w-2/5">
                       <label
                         htmlFor="numero"
                         className="block text-sm font-medium dark:text-white"
@@ -62,12 +62,12 @@ export const ConversionPage = () => {
                       />
                     </div>
 
-                    <div className="ml-6 mr-2 w-96">
+                    <div className="ml-6 mr-2 w-2/5">
                       <label
                         htmlFor="baseInicial"
                         className="block text-sm font-medium dark:text-white"
                       >
-                        Base:
+                        Base a Convertir:
                       </label>
                       <select
                         id="baseInicial"
