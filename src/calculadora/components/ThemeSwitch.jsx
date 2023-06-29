@@ -2,17 +2,10 @@ import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
 
 export const ThemeSwitch = () => {
+  //***Hook para cambio de tema***//
   const [theme, setTheme] = useState("light");
 
-  // useEffect(() => {
-  //   if(window.matchMedia(('prefers-color-scheme: dark').matches)){
-  //       setTheme('dark')
-  //       return
-  //   }
-  //   setTheme('light')
-  // }, [])
-  
-
+  //***Hook para observar el momento en el que cambie el valor de el tema***//
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -21,6 +14,7 @@ export const ThemeSwitch = () => {
     }
   }, [theme]);
 
+  //Funcion que cambia el tema al hacer click
   const onToggleBtn = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };

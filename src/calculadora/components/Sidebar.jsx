@@ -7,10 +7,12 @@ import {
 } from "@heroicons/react/24/solid";
 
 export const SidebarGPTO = () => {
+  
+  //Funcion para abrir y cerrar el sidebar
   const handleToggleSidebar = () => {
     const sidebar = document.getElementById("default-sidebar");
     const isSidebarOpen = sidebar.classList.contains("-translate-x-0");
-    
+
     if (isSidebarOpen) {
       sidebar.classList.add("-translate-x-full");
       sidebar.classList.remove("-translate-x-0");
@@ -21,7 +23,7 @@ export const SidebarGPTO = () => {
   };
   return (
     <>
-    <button
+      <button
         onClick={handleToggleSidebar}
         onTouchStart={handleToggleSidebar}
         data-drawer-target="default-sidebar"
