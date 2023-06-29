@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 export const ThemeSwitch = () => {
   const [theme, setTheme] = useState("light");
 
-  useEffect(() => {
-    if(window.matchMedia(('prefers-color-scheme: dark').matches)){
-        setTheme('dark')
-        return
-    }
-    setTheme('light')
-  }, [])
+  // useEffect(() => {
+  //   if(window.matchMedia(('prefers-color-scheme: dark').matches)){
+  //       setTheme('dark')
+  //       return
+  //   }
+  //   setTheme('light')
+  // }, [])
   
 
   useEffect(() => {
