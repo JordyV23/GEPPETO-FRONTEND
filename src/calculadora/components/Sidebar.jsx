@@ -7,9 +7,25 @@ import {
 } from "@heroicons/react/24/solid";
 
 export const SidebarGPTO = () => {
+  
+  //Funcion para abrir y cerrar el sidebar
+  const handleToggleSidebar = () => {
+    const sidebar = document.getElementById("default-sidebar");
+    const isSidebarOpen = sidebar.classList.contains("-translate-x-0");
+
+    if (isSidebarOpen) {
+      sidebar.classList.add("-translate-x-full");
+      sidebar.classList.remove("-translate-x-0");
+    } else {
+      sidebar.classList.remove("-translate-x-full");
+      sidebar.classList.add("-translate-x-0");
+    }
+  };
   return (
     <>
       <button
+        onClick={handleToggleSidebar}
+        onTouchStart={handleToggleSidebar}
         data-drawer-target="default-sidebar"
         data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
@@ -36,6 +52,7 @@ export const SidebarGPTO = () => {
         id="default-sidebar"
         className="fixed top-0 left-0 z-40 w-64 h-screen rounded-lg transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
+        onTouchStart={handleToggleSidebar}
       >
         <div className="h-full px-3 py-4 overflow-y-auto bg-light-accent dark:bg-dark-accent">
           <ul className="space-y-2 font-medium">
