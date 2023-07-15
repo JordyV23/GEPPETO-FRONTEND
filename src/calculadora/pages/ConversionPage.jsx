@@ -42,7 +42,7 @@ export const ConversionPage = () => {
       </div> */}
 
       <div className="flex flex-col h-screen">
-        <NavbarGPTO /> 
+        <NavbarGPTO />
 
 
       <div className="flex">
@@ -143,33 +143,54 @@ export const ConversionPage = () => {
         <div className="col-span-8 h-[calc(100vh-3.75rem)] p-4 ">
           <div className="container ">
             <div className="flex mt-4 mx-auto">
-              <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
-                <div className="flex">
+                <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
+                  <div className="flex">
                   <div className="mr-2">
-                    <label
-                      htmlFor="numero"
+                      <label
+                        htmlFor="numero"
                       className="block text-sm font-medium"
-                    >
-                      Valor a Convertir:
-                    </label>
-                    <input
-                      id="numero"
-                      {...register("numero")}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                    />
-                  </div>
+                      >
+                        Valor a Convertir:
+                      </label>
+                      <input
+                        id="numero"
+                        {...register("numero")}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      />
+                    </div>
 
                   <div className="mr-2">
-                    <label
-                      htmlFor="baseInicial"
+                      <label
+                        htmlFor="baseInicial"
                       className="block text-sm font-medium"
-                    >
+                      >
                       Base Inicial:
+                      </label>
+                      <select
+                        id="baseInicial"
+                        {...register("baseInicial")}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      >
+                        {ops.map((op) => (
+                          <option key={op.value} value={op.value}>
+                            {op.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="mt-2">
+                    <label
+                      htmlFor="baseFinal"
+                    className="block text-sm font-medium"
+                    >
+                      Base Final:{" "}
                     </label>
                     <select
-                      id="baseInicial"
-                      {...register("baseInicial")}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      id="baseFinal"
+                      {...register("baseFinal")}
+                      className="w-52 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     >
                       {ops.map((op) => (
                         <option key={op.value} value={op.value}>
@@ -178,27 +199,6 @@ export const ConversionPage = () => {
                       ))}
                     </select>
                   </div>
-                </div>
-
-                <div className="mt-2">
-                  <label
-                    htmlFor="baseFinal"
-                    className="block text-sm font-medium"
-                  >
-                    Base Final:{" "}
-                  </label>
-                  <select
-                    id="baseFinal"
-                    {...register("baseFinal")}
-                    className="w-52 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                  >
-                    {ops.map((op) => (
-                      <option key={op.value} value={op.value}>
-                        {op.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
 
                 <Button type="submit" className="bg-light-accent mt-3">
                   Calcular <Cog8ToothIcon className="h-6 w-6 text-light" />
@@ -218,19 +218,19 @@ export const ConversionPage = () => {
               <div className="mr-2">
                 <label htmlFor="numero" className="block text-sm font-medium">
                   Valor a Convertir:
-                </label>
-                <input
+                  </label>
+                  <input
                   id="numero"
                   {...register("numero")}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                />
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  />
               </div>
 
               <div className="mr-2">
                 <label
                   htmlFor="baseInicial"
                   className="block text-sm font-medium"
-                >
+                  >
                   Base Inicial:
                 </label>
                 <select
@@ -262,7 +262,7 @@ export const ConversionPage = () => {
                   </option>
                 ))}
               </select>
-            </div>
+          </div>
 
             <Button type="submit" className="bg-light-accent mt-3">
               Calcular <Cog8ToothIcon className="h-6 w-6 text-light" />
