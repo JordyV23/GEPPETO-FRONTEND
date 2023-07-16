@@ -1,22 +1,30 @@
 import axios from "axios";
-import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
-import { NavbarGPTO } from "../components";
+import { NavbarGPTO, SidebarGPTO } from "../components";
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
-import { SidebarGPTO } from "../components/Sidebar";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "animate.css";
+import "hover.css";
 
+//****Inicializa arreglo con valor para select de bases****//
 const ops = Array.from({ length: 61 }, (_, i) => ({
   label: `${i + 2}`,
   value: i + 2,
 }));
 
 export const ConversionPage = () => {
+  //***Hook para manejo de formulario***//
   const { register, handleSubmit } = useForm();
+
+  //***Hook para manejo de valor del resultado***//
   const [resultado, setResultado] = useState("0");
 
+  //***Funcion para consulta a la API para obtener resultado de la conversion***//
   const onSubmit = async ({ numero, baseInicial, baseFinal }) => {
+    //Envio de datos a la api por POST
     const { data: datos } = await axios.post(
       `${import.meta.env.VITE_APIURL}cbase/`,
       {
@@ -26,34 +34,40 @@ export const ConversionPage = () => {
       }
     );
 
-    console.log(datos);
+    //Si el status que viene de la API es true, continua
     if (datos.Status == "True") {
       setResultado(datos.Numero);
       return;
     }
-    Swal.fire({ icon: "error", title: "Error", text: `Revisa tu conversion` });
+    //Si no, muestra un toast
+    toast("Revisa tu conversion :c");
   };
 
   return (
     <>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen animate__animated animate__fadeIn">
+        {/* Inserta componente personalizado de navbar */}
         <NavbarGPTO />
 
         <div className="flex">
+          {/* Inserta componente personalizado de sidebar */}
           <SidebarGPTO />
 
-          <div className="p-4 sm:ml-64">
-            <div className="p-4 border-2 items-center justify-center border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-20">
+          <div className="p-4 sm:ml-64 w-8/12">
+            <div className="p-4 border-2 items-center w-full justify-center border-white border-dashed rounded-lg dark:border-white mt-20">
               <div className="flex items-center justify-center h-68 mb-4 rounded ">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
                   <div className="flex">
-                    <div className="mr-2">
+                    <div className="mr-2 w-2/5">
+                      {/* Label para input de numero a convertir */}
                       <label
                         htmlFor="numero"
-                        className="block text-sm font-medium"
+                        className="block text-sm font-medium dark:text-white"
                       >
                         Valor a Convertir:
                       </label>
+
+                      {/* Input para el numero a convertir */}
                       <input
                         id="numero"
                         {...register("numero")}
@@ -61,13 +75,16 @@ export const ConversionPage = () => {
                       />
                     </div>
 
-                    <div className="mr-2">
+                    <div className="ml-6 mr-2 w-2/5">
+                      {/* Label para el select de base del numero a convertir */}
                       <label
                         htmlFor="baseInicial"
-                        className="block text-sm font-medium"
+                        className="block text-sm font-medium dark:text-white"
                       >
-                        Base Inicial:
+                        Base a Convertir:
                       </label>
+
+                      {/* Select de la base del numero inicial */}
                       <select
                         id="baseInicial"
                         {...register("baseInicial")}
@@ -83,12 +100,15 @@ export const ConversionPage = () => {
                   </div>
 
                   <div className="mt-2">
+                    {/* Label para la base del resultado */}
                     <label
                       htmlFor="baseFinal"
-                      className="block text-sm font-medium"
+                      className="block text-sm font-medium dark:text-white"
                     >
                       Base Final:{" "}
                     </label>
+
+                    {/* Select para la base del resultado */}
                     <select
                       id="baseFinal"
                       {...register("baseFinal")}
@@ -102,12 +122,14 @@ export const ConversionPage = () => {
                     </select>
                   </div>
 
+                  {/* Label para el resultado */}
                   <label
                     htmlFor="resultado"
-                    className="block text-sm font-medium"
+                    className="block text-sm font-medium dark:text-white mt-3"
                   >
                     Resultado:
                   </label>
+                  {/* Input para mostrar el resultado */}
                   <input
                     id="resultado"
                     readOnly
@@ -115,10 +137,17 @@ export const ConversionPage = () => {
                     value={resultado}
                   />
 
-                  <Button type="submit" className="bg-light-accent mt-3">
-                    Calcular <Cog8ToothIcon className="h-6 w-6 text-light" />
+                  {/* Boton que acciona evento para consultar la API */}
+                  <Button
+                    type="submit"
+                    className="bg-light-accent dark:bg-dark-accent mt-3 mx-auto px-3 py-3 hvr-grow hvr-icon-spin"
+                  >
+                    Calcular
+                    <Cog8ToothIcon className="h-6 w-6 text-light hvr-icon" />
                   </Button>
                 </form>
+                {/* Contenedor toast para notificacion de error */}
+                <ToastContainer />
               </div>
             </div>
           </div>
