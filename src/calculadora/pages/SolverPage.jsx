@@ -9,34 +9,26 @@ import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
 
-//****Inicializa arreglo con valor para select de bases****//
-const ops = Array.from({ length: 61 }, (_, i) => ({
-  label: `${i + 2}`,
-  value: i + 2,
-}));
-
-export const ConversionPage = () => {
+export const SolverPage = () => {
   //***Hook para manejo de formulario***//
   const { register, handleSubmit } = useForm();
+
+  //***Hook para manejo de valor del resultado***//
+  const [resultado, setResultado] = useState("");
 
   //**Hook para manejo de estado de carga  */
   const [loading, setloading] = useState(false);
 
-  //***Hook para manejo de valor del resultado***//
-  const [resultado, setResultado] = useState("0");
-
   //***Funcion para consulta a la API para obtener resultado de la conversion***//
-  const onSubmit = async ({ numero, baseInicial, baseFinal }) => {
+  const onSubmit = async ({ expresion }) => {
     //Cambia el estado de carga a true
     setloading(true);
-
+    
     //Envio de datos a la api por POST
     const { data: datos } = await axios.post(
-      `${import.meta.env.VITE_APIURL}cbase/`,
+      `${import.meta.env.VITE_APIURL}numbes/`,
       {
-        _num: numero,
-        base_from: parseInt(baseInicial),
-        base_to: parseInt(baseFinal),
+        cifras: expresion,
       }
     );
 
@@ -45,7 +37,7 @@ export const ConversionPage = () => {
 
     //Si el status que viene de la API es true, continua
     if (datos.Status == "True") {
-      setResultado(datos.Numero);
+      setResultado(datos.solucion);
       return;
     }
     //Si no, muestra un toast
@@ -71,68 +63,24 @@ export const ConversionPage = () => {
               <div className="flex items-center justify-center h-68 mb-4 rounded ">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
                   <div className="flex">
-                    <div className="mr-2 w-2/5">
-                      {/* Label para input de numero a convertir */}
+                    <div className="mr-2 w-full">
+                      {/* Label para la expresion */}
                       <label
-                        htmlFor="numero"
+                        htmlFor="expresion"
                         className="block text-sm font-medium dark:text-white"
                       >
-                        Valor a Convertir:
+                        Expreison Numerica:
                       </label>
 
-                      {/* Input para el numero a convertir */}
+                      {/* Input para la expresion a convertir */}
                       <input
-                        id="numero"
-                        {...register("numero")}
+                        id="expresion"
+                        type="text"
+                        {...register("expresion")}
+                        placeholder="Ejemplo: c42(8);43(a);a5(b);b42(c)"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
-
-                    <div className="ml-6 mr-2 w-2/5">
-                      {/* Label para el select de base del numero a convertir */}
-                      <label
-                        htmlFor="baseInicial"
-                        className="block text-sm font-medium dark:text-white"
-                      >
-                        Base a Inicial:
-                      </label>
-
-                      {/* Select de la base del numero inicial */}
-                      <select
-                        id="baseInicial"
-                        {...register("baseInicial")}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      >
-                        {ops.map((op) => (
-                          <option key={op.value} value={op.value}>
-                            {op.label}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="mt-2">
-                    {/* Label para la base del resultado */}
-                    <label
-                      htmlFor="baseFinal"
-                      className="block text-sm font-medium dark:text-white"
-                    >
-                      Base Final:{" "}
-                    </label>
-
-                    {/* Select para la base del resultado */}
-                    <select
-                      id="baseFinal"
-                      {...register("baseFinal")}
-                      className="w-52 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                    >
-                      {ops.map((op) => (
-                        <option key={op.value} value={op.value}>
-                          {op.label}
-                        </option>
-                      ))}
-                    </select>
                   </div>
 
                   {/* Label para el resultado */}
@@ -143,10 +91,11 @@ export const ConversionPage = () => {
                     Resultado:
                   </label>
                   {/* Input para mostrar el resultado */}
-                  <input
+                  <textarea
                     id="resultado"
+                    rows={5}
                     readOnly
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md text-center focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     value={resultado}
                   />
 
@@ -155,10 +104,11 @@ export const ConversionPage = () => {
                     type="submit"
                     className="bg-light-accent dark:bg-dark-accent mt-3 mx-auto px-3 py-3 hvr-grow hvr-icon-spin"
                   >
-                    Calcular
+                    Resolver
                     <Cog8ToothIcon className="h-6 w-6 text-light hvr-icon" />
                   </Button>
                 </form>
+
                 {/* Contenedor toast para notificacion de error */}
                 <ToastContainer />
               </div>
