@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Button, Carousel } from "flowbite-react";
-import { Loader, NavbarGPTO, SidebarGPTO } from "../components";
+import { Loader, NavbarGPTO, SidebarGPTO,ImageModal } from "../components";
 import {
   Cog8ToothIcon,
 } from "@heroicons/react/24/solid";
@@ -10,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
-import ImageModal from "../components/ImageModal";
+
 
 //****Inicializa arreglo con valor para select de bases****//
 const ops = Array.from({ length: 61 }, (_, i) => ({

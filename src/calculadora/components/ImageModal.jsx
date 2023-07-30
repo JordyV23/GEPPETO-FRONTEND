@@ -5,7 +5,7 @@ import { useState } from "react";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
 import { ImageSlider } from "./ImageSlider";
 
-export default function ImageModal({imagenes}) {
+export  const ImageModal = ({imagenes}) => {
   const [openModal, setOpenModal] = useState("");
   const props = { openModal, setOpenModal };
 
