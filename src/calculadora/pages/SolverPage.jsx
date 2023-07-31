@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
-import { Loader, NavbarGPTO, SidebarGPTO } from "../components";
+import { Loader, NavbarGPTO, SidebarGPTO,ImageModal } from "../components";
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -48,6 +48,10 @@ export const SolverPage = () => {
     return <Loader />;
   }
 
+    //Arreglo de imagenes con el paso a paso de este modulo
+    const imagenes = ["/guides/mod2/1.png","/guides/mod2/2.png","/guides/mod2/3.png","/guides/mod2/4.png"];
+
+
   return (
     <>
       <div className="flex flex-col h-screen animate__animated animate__fadeIn">
@@ -81,6 +85,9 @@ export const SolverPage = () => {
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
+
+                    {/* Btn que despliega el modal con el paso a paso */}
+                    <ImageModal imagenes={imagenes} />
                   </div>
 
                   {/* Label para el resultado */}
