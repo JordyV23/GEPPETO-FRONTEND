@@ -5,20 +5,27 @@ import { useState } from "react";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
 import { ImageSlider } from "./ImageSlider";
 
-export  const ImageModal = ({imagenes}) => {
+export const ImageModal = ({ imagenes }) => {
   const [openModal, setOpenModal] = useState("");
-  const props = { openModal, setOpenModal };
 
+  const [flag, setFlag] = useState(1);
+
+  const props = { openModal, setOpenModal };
+  
+  const onClickEvent = () => {
+    props.setOpenModal("default")
+    setFlag(flag+1)
+  }
+  
 
   return (
     <>
       <button
         type="button"
         className="p-4 focus:outline-0"
-        onClick={() => props.setOpenModal("default")}
+        onClick={() => onClickEvent()}
       >
-        {" "}
-        <InformationCircleIcon className="h-8 w-8 text-info-color hvr-icon hvr-grow" />{" "}
+        <InformationCircleIcon className="h-8 w-8 text-info-color hvr-icon hvr-grow" />
       </button>
       <Modal
         show={props.openModal === "default"}
@@ -26,9 +33,7 @@ export  const ImageModal = ({imagenes}) => {
       >
         <Modal.Header className="dark:bg-dark-accent">Modo de Uso</Modal.Header>
         <Modal.Body className="dark:bg-dark-accent">
-        
-          <ImageSlider imagenes={imagenes} />
-          
+          <ImageSlider imagenes={imagenes} flagParam={flag} />
         </Modal.Body>
         <Modal.Footer className="dark:bg-dark-accent">
           <Button
@@ -42,4 +47,4 @@ export  const ImageModal = ({imagenes}) => {
       </Modal>
     </>
   );
-}
+};

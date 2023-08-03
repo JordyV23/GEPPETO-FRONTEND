@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
-import { Loader, NavbarGPTO, SidebarGPTO,ImageModal } from "../components";
+import { Loader, NavbarGPTO, SidebarGPTO, ImageModal } from "../components";
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
 
-export const SolverPage = () => {
+export const ProblemsPage = () => {
   //***Hook para manejo de formulario***//
   const { register, handleSubmit } = useForm();
 
@@ -23,7 +23,7 @@ export const SolverPage = () => {
   const onSubmit = async ({ expresion }) => {
     //Cambia el estado de carga a true
     setloading(true);
-    
+
     //Envio de datos a la api por POST
     const { data: datos } = await axios.post(
       `${import.meta.env.VITE_APIURL}numbes/`,
@@ -48,9 +48,13 @@ export const SolverPage = () => {
     return <Loader />;
   }
 
-   //Arreglo de imagenes con el paso a paso de este modulo
-  const [images, setImages] = useState(["/guides/mod2/1.png","/guides/mod2/2.png","/guides/mod2/3.png","/guides/mod2/4.png"]);
-
+  //Arreglo de imagenes con el paso a paso de este modulo
+  const [images, setImages] = useState([
+    "/guides/mod2/1.png",
+    "/guides/mod2/2.png",
+    "/guides/mod2/3.png",
+    "/guides/mod2/4.png",
+  ]);
 
   return (
     <>
@@ -77,12 +81,13 @@ export const SolverPage = () => {
                       </label>
 
                       {/* Input para la expresion a convertir */}
-                      <input
+                      <textarea
                         id="expresion"
                         type="text"
+                        rows={5}
                         {...register("expresion")}
-                        placeholder="Ejemplo: c42(8);43(a);a5(b);b42(c)"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Ingrese su problema"
+                        className=" resize-none w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
 

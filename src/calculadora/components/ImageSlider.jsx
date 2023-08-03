@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export const ImageSlider = ({ imagenes }) => {
+export const ImageSlider = ({ imagenes,flagParam }) => {
+  
+  const [flag, setFlag] = useState(0)
+  const [images, setImages] = useState([])
+
+
+  if(flagParam != flag){
+    setFlag(flagParam);
+    setImages(imagenes);
+  }
+
+  useEffect(()=> {
+    if(flagParam != flag){
+      setFlag(flagParam);
+      setImages(imagenes);
+      console.log("Entra")
+
+    }
+  }, [flagParam])
 
   return (
     <>
@@ -11,12 +29,13 @@ export const ImageSlider = ({ imagenes }) => {
       >
         {/* <!-- Carousel wrapper --> */}
         <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-          {imagenes.map((imagen) => (
+          {images.map((imagen) => (
             <div
               key={imagen}
               className="hidden duration-700 ease-in-out"
               data-carousel-item
             >
+            {/* <Image className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" cloudName="dfgi0xfbu" publicId={'geppetto/mod1/1'}  /> */}
               <img
                 src={imagen}
                 className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -26,18 +45,18 @@ export const ImageSlider = ({ imagenes }) => {
           ))}
         </div>
         {/* <!-- Indicadores del Slider --> */}
-        {/* <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-          {imagenes.map((i) => (
+        <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+          {images.map((i) => (
             <button
               key={i}
               type="button"
-              className="w-3 h-3 bg-light-accent dark:bg-main-dark rounded-full"
+              className="w-3 h-3 rounded-full"
               aria-current={i===0 ? "true" : "false"}
               aria-label={`Slide ${i+1}`}
               data-carousel-slide-to={`${i}`}
             ></button>
           ))}
-        </div> */}
+        </div>
         {/* <!--  Controles del Slider  --> */}
         <button
           type="button"

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { Button, Carousel } from "flowbite-react";
-import { Loader, NavbarGPTO, SidebarGPTO,ImageModal } from "../components";
+import { Button } from "flowbite-react";
+import { Loader, NavbarGPTO, SidebarGPTO,ImageModal, ImageSlider } from "../components";
 import {
   Cog8ToothIcon,
 } from "@heroicons/react/24/solid";
@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
+import { useEffect } from "react";
 
 
 //****Inicializa arreglo con valor para select de bases****//
@@ -62,6 +63,7 @@ export const ConversionPage = () => {
   //Arreglo de imagenes con el paso a paso de este modulo
   const imagenes = ["/guides/mod1/1.png","/guides/mod1/2.png","/guides/mod1/3.png","/guides/mod1/4.png","/guides/mod1/5.png"];
 
+  const [images, setImages] = useState(["/guides/mod1/1.png","/guides/mod1/2.png","/guides/mod1/3.png","/guides/mod1/4.png","/guides/mod1/5.png"]);
 
   return (
     <>
@@ -120,7 +122,7 @@ export const ConversionPage = () => {
                     </div>
 
                     {/* Btn que despliega el modal con el paso a paso */}
-                    <ImageModal imagenes={imagenes} />
+                    <ImageModal imagenes={images} />
                   </div>
 
                   <div className="mt-2">
@@ -178,6 +180,7 @@ export const ConversionPage = () => {
           </div>
         </div>
       </div>
+      <ImageSlider imagenes={images} />      
     </>
   );
 };

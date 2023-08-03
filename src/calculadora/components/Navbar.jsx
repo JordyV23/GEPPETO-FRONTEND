@@ -1,6 +1,6 @@
 "use client";
 
-import { ThemeSwitch } from "./ThemeSwitch";
+import { ThemeSwitch } from "../../components";
 
 export const NavbarGPTO = () => {
   return (
@@ -115,7 +115,7 @@ export const NavbarGPTO = () => {
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                       role="menuitem"
                     >
-                      Jose Gonzalez
+                      Jose Gonzales
                     </a>
                   </li>
                   <li>
