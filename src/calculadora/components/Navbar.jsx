@@ -1,6 +1,6 @@
 "use client";
 
-import { ThemeSwitch } from "./ThemeSwitch";
+import { ThemeSwitch } from "../../components";
 
 export const NavbarGPTO = () => {
   return (
