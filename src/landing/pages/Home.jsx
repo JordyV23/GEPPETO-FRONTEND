@@ -1,3 +1,4 @@
+
 import { NavbarLanding } from "../components";
 import { FooterLanding } from "../components/FooterLanding";
 
@@ -20,3 +21,4 @@ export const Home = () => {
     </>
   );
 };
+
