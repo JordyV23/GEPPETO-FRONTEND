@@ -1,3 +1,5 @@
 export * from "./Navbar"
 export * from "./Sidebar"
-export * from "./ThemeSwitch"
+export * from "./Loader"
+export * from "./ImageModal"
+export * from "./ImageSlider"
