@@ -5,9 +5,9 @@ import {
   ChatBubbleLeftRightIcon,
   CpuChipIcon,
 } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 export const SidebarGPTO = () => {
-  
   //Funcion para abrir y cerrar el sidebar
   const handleToggleSidebar = () => {
     const sidebar = document.getElementById("default-sidebar");
@@ -57,8 +57,15 @@ export const SidebarGPTO = () => {
         <div className="h-full px-3 py-4 overflow-y-auto bg-light-accent dark:bg-dark-accent">
           <ul className="space-y-2 font-medium">
             <li className="mt-16">
+              {/* <Link
+                to="/geppetto/convert"
+                className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
+              >
+                <CalculatorIcon className="w-6 h-6 text-txt-light transition duration-75  group-hover:text-gray-900 " />
+                <span className="flex-1 ml-3 whitespace-nowrap">Modulo 1</span>
+              </Link> */}
               <a
-                href="#"
+                href="/geppetto/convert"
                 className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
               >
                 <CalculatorIcon className="w-6 h-6 text-txt-light transition duration-75  group-hover:text-gray-900 " />
@@ -66,8 +73,15 @@ export const SidebarGPTO = () => {
               </a>
             </li>
             <li>
+              {/* <Link
+                to="/geppetto/solver"
+                className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
+              >
+                <CpuChipIcon className="w-6 h-6 text-txt-light transition duration-75  group-hover:text-gray-900 " />
+                <span className="flex-1 ml-3 whitespace-nowrap">Modulo 2</span>
+              </Link> */}
               <a
-                href="#"
+                href="/geppetto/solver"
                 className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
               >
                 <CpuChipIcon className="w-6 h-6 text-txt-light transition duration-75  group-hover:text-gray-900 " />
@@ -76,8 +90,15 @@ export const SidebarGPTO = () => {
             </li>
 
             <li>
+              {/* <Link
+                to="/geppetto/solver"
+                className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
+              >
+                <ChatBubbleLeftRightIcon className="w-6 h-6 text-txt-light transition duration-75  group-hover:text-gray-900 " />
+                <span className="flex-1 ml-3 whitespace-nowrap">Modulo 3</span>
+              </Link> */}
               <a
-                href="#"
+                href="/geppetto/problemsolver"
                 className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
               >
                 <ChatBubbleLeftRightIcon className="w-6 h-6 text-txt-light transition duration-75  group-hover:text-gray-900 " />

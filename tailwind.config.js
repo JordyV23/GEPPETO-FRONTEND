@@ -15,6 +15,7 @@ export default {
       "txt-light": "#FFFFFF",
       "main-dark": "#443C68",
       "dark-accent": "#18122B",
+      "info-color":"#1682EE",
     },
     extend: {},
   },

@@ -2,9 +2,13 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
-import { NavbarGPTO } from "../components";
-import { Cog8ToothIcon } from "@heroicons/react/24/solid";
+import { Loader, NavbarGPTO,ImageModal, ImageSlider } from "../components";
+import {
+  Cog8ToothIcon,
+} from "@heroicons/react/24/solid";
 import { SidebarGPTO } from "../components/Sidebar";
+import { useEffect } from "react";
+
 
 const ops = Array.from({ length: 62 }, (_, i) => ({
   label: `${i + 2}`,
@@ -14,7 +18,17 @@ const ops = Array.from({ length: 62 }, (_, i) => ({
 export const ConversionPage = () => {
   const { register, handleSubmit } = useForm();
 
+  //**Hook para manejo de estado de carga  */
+  const [loading, setloading] = useState(false);
+
+  //***Hook para manejo de valor del resultado***//
+  const [resultado, setResultado] = useState("");
+
+  //***Funcion para consulta a la API para obtener resultado de la conversion***//
   const onSubmit = async ({ numero, baseInicial, baseFinal }) => {
+    //Cambia el estado de carga a true
+    setloading(true);
+
     const { data: datos } = await axios.post(
       `${import.meta.env.VITE_APIURL}cbase/`,
       {
@@ -24,8 +38,23 @@ export const ConversionPage = () => {
       }
     );
 
+    //Cambia el estado de carga a falso
+    setloading(false);
+
+    //Cambia el estado de carga a falso
+    setloading(false);
+
     Swal.fire(`${datos.Mensaje} resultado: ${datos.Numero}`);
   };
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  //Arreglo de imagenes con el paso a paso de este modulo
+  const imagenes = ["/guides/mod1/1.png","/guides/mod1/2.png","/guides/mod1/3.png","/guides/mod1/4.png","/guides/mod1/5.png"];
+
+  const [images, setImages] = useState(["/guides/mod1/1.png","/guides/mod1/2.png","/guides/mod1/3.png","/guides/mod1/4.png","/guides/mod1/5.png"]);
 
   return (
     <>
@@ -48,6 +77,9 @@ export const ConversionPage = () => {
       <div className="flex">
           <SidebarGPTO /> 
 
+          <div className="p-4 sm:ml-64 w-8/12">
+            <div className="p-4  items-center w-full justify-center  rounded-lg dark:border-white mt-20">
+              <div className="flex items-center justify-center h-68 mb-4 rounded ">
        
           <div className="p-4 sm:ml-64">
             <div className="p-4 border-2 items-center justify-center border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-20">
@@ -164,13 +196,14 @@ export const ConversionPage = () => {
                         htmlFor="baseInicial"
                       className="block text-sm font-medium"
                       >
-                      Base Inicial:
+                        Base a Inicial:
                       </label>
                       <select
                         id="baseInicial"
                         {...register("baseInicial")}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       >
+                      <option></option>
                         {ops.map((op) => (
                           <option key={op.value} value={op.value}>
                             {op.label}
@@ -178,6 +211,9 @@ export const ConversionPage = () => {
                         ))}
                       </select>
                     </div>
+
+                    {/* Btn que despliega el modal con el paso a paso */}
+                    <ImageModal imagenes={images} />
                   </div>
 
                   <div className="mt-2">
@@ -192,6 +228,7 @@ export const ConversionPage = () => {
                       {...register("baseFinal")}
                       className="w-52 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     >
+                      <option></option>
                       {ops.map((op) => (
                         <option key={op.value} value={op.value}>
                           {op.label}
@@ -270,6 +307,7 @@ export const ConversionPage = () => {
           </form>
         </div>
       </div> */}
+      <ImageSlider imagenes={images} />      
     </>
   );
 };
