@@ -1,17 +1,21 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
-import { Loader, NavbarGPTO, SidebarGPTO,ImageModal, ImageSlider } from "../components";
 import {
-  Cog8ToothIcon,
-} from "@heroicons/react/24/solid";
+  Loader,
+  NavbarGPTO,
+  SidebarGPTO,
+  ImageModal,
+  ModalTutorial,
+} from "../components";
+import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
-import { useEffect } from "react";
-
+import { TourProvider } from "@reactour/tour";
+import { stepsModule1 } from "../../helpers";
 
 //****Inicializa arreglo con valor para select de bases****//
 const ops = Array.from({ length: 61 }, (_, i) => ({
@@ -61,58 +65,100 @@ export const ConversionPage = () => {
   }
 
   //Arreglo de imagenes con el paso a paso de este modulo
-  const imagenes = ["/guides/mod1/1.png","/guides/mod1/2.png","/guides/mod1/3.png","/guides/mod1/4.png","/guides/mod1/5.png"];
-
-  const [images, setImages] = useState(["/guides/mod1/1.png","/guides/mod1/2.png","/guides/mod1/3.png","/guides/mod1/4.png","/guides/mod1/5.png"]);
+  const imagenes = [
+    "/guides/mod1/1.png",
+    "/guides/mod1/2.png",
+    "/guides/mod1/3.png",
+    "/guides/mod1/4.png",
+    "/guides/mod1/5.png",
+  ];
 
   return (
     <>
-      <div className="flex flex-col h-screen animate__animated animate__fadeIn">
-        {/* Inserta componente personalizado de navbar */}
-        <NavbarGPTO />
+      <TourProvider steps={stepsModule1} startAt={0}>
+        <ModalTutorial
+          info={[
+            "¡Hola! Parece que es tu primera vez por acáacá",
+            "¿Te gustaría explorar con el tutorial?",
+          ]}
 
-        <div className="flex">
-          {/* Inserta componente personalizado de sidebar */}
-          <SidebarGPTO />
+          booleanState={false}
 
-          <div className="p-4 sm:ml-64 w-8/12">
-            <div className="p-4  items-center w-full justify-center  rounded-lg dark:border-white mt-20">
-              <div className="flex items-center justify-center h-68 mb-4 rounded ">
-                <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
-                  <div className="flex">
-                    <div className="mr-2 w-2/5">
-                      {/* Label para input de numero a convertir */}
-                      <label
-                        htmlFor="numero"
-                        className="block text-sm font-medium dark:text-white"
-                      >
-                        Valor a Convertir:
-                      </label>
+          btnInstruction={'btnInstruction'}
+        />
+        <div className="flex flex-col h-screen animate__animated animate__fadeIn">
+          {/* Inserta componente personalizado de navbar */}
+          <NavbarGPTO />
+          <div className="flex">
+            {/* Inserta componente personalizado de sidebar */}
+            <SidebarGPTO />
 
-                      {/* Input para el numero a convertir */}
-                      <input
-                        id="numero"
-                        {...register("numero")}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      />
+            <div className="p-4 sm:ml-64 w-8/12">
+              <div className="p-4  items-center w-full justify-center  rounded-lg dark:border-white mt-20">
+                <div className="flex items-center justify-center h-68 mb-4 rounded ">
+                  <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
+                    <div className="flex">
+                      <div className="mr-2 w-2/5">
+                        {/* Label para input de numero a convertir */}
+                        <label
+                          htmlFor="numero"
+                          className="block text-sm font-medium dark:text-white"
+                        >
+                          Valor a Convertir:
+                        </label>
+
+                        {/* Input para el numero a convertir */}
+                        <input
+                          id="numero"
+                          {...register("numero")}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        />
+                      </div>
+
+                      <div className="ml-6 mr-2 w-2/5">
+                        {/* Label para el select de base del numero a convertir */}
+                        <label
+                          htmlFor="baseInicial"
+                          className="block text-sm font-medium dark:text-white"
+                        >
+                          Base a Inicial:
+                        </label>
+
+                        {/* Select de la base del numero inicial */}
+                        <select
+                          id="baseInicial"
+                          {...register("baseInicial")}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        >
+                          <option></option>
+                          {ops.map((op) => (
+                            <option key={op.value} value={op.value}>
+                              {op.label}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      {/* Btn que despliega el modal con el paso a paso */}
+                      <ImageModal imagenes={imagenes} />
                     </div>
 
-                    <div className="ml-6 mr-2 w-2/5">
-                      {/* Label para el select de base del numero a convertir */}
+                    <div className="mt-2">
+                      {/* Label para la base del resultado */}
                       <label
-                        htmlFor="baseInicial"
+                        htmlFor="baseFinal"
                         className="block text-sm font-medium dark:text-white"
                       >
-                        Base a Inicial:
+                        Base Final:{" "}
                       </label>
 
-                      {/* Select de la base del numero inicial */}
+                      {/* Select para la base del resultado */}
                       <select
-                        id="baseInicial"
-                        {...register("baseInicial")}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        id="baseFinal"
+                        {...register("baseFinal")}
+                        className="w-52 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       >
-                      <option></option>
+                        <option></option>
                         {ops.map((op) => (
                           <option key={op.value} value={op.value}>
                             {op.label}
@@ -121,66 +167,39 @@ export const ConversionPage = () => {
                       </select>
                     </div>
 
-                    {/* Btn que despliega el modal con el paso a paso */}
-                    <ImageModal imagenes={images} />
-                  </div>
-
-                  <div className="mt-2">
-                    {/* Label para la base del resultado */}
+                    {/* Label para el resultado */}
                     <label
-                      htmlFor="baseFinal"
-                      className="block text-sm font-medium dark:text-white"
+                      htmlFor="resultado"
+                      className="block text-sm font-medium dark:text-white mt-3"
                     >
-                      Base Final:{" "}
+                      Resultado:
                     </label>
+                    {/* Input para mostrar el resultado */}
+                    <input
+                      id="resultado"
+                      readOnly
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      value={resultado}
+                    />
 
-                    {/* Select para la base del resultado */}
-                    <select
-                      id="baseFinal"
-                      {...register("baseFinal")}
-                      className="w-52 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    {/* Boton que acciona evento para consultar la API */}
+                    <Button
+                      id="submit"
+                      type="submit"
+                      className="bg-light-accent dark:bg-dark-accent mt-3 mx-auto px-3 py-3 hvr-grow hvr-icon-spin"
                     >
-                      <option></option>
-                      {ops.map((op) => (
-                        <option key={op.value} value={op.value}>
-                          {op.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  {/* Label para el resultado */}
-                  <label
-                    htmlFor="resultado"
-                    className="block text-sm font-medium dark:text-white mt-3"
-                  >
-                    Resultado:
-                  </label>
-                  {/* Input para mostrar el resultado */}
-                  <input
-                    id="resultado"
-                    readOnly
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                    value={resultado}
-                  />
-
-                  {/* Boton que acciona evento para consultar la API */}
-                  <Button
-                    type="submit"
-                    className="bg-light-accent dark:bg-dark-accent mt-3 mx-auto px-3 py-3 hvr-grow hvr-icon-spin"
-                  >
-                    Calcular
-                    <Cog8ToothIcon className="h-6 w-6 text-light hvr-icon" />
-                  </Button>
-                </form>
-                {/* Contenedor toast para notificacion de error */}
-                <ToastContainer />
+                      Calcular
+                      <Cog8ToothIcon className="h-6 w-6 text-light hvr-icon" />
+                    </Button>
+                  </form>
+                  {/* Contenedor toast para notificacion de error */}
+                  <ToastContainer />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <ImageSlider imagenes={images} />      
+      </TourProvider>
     </>
   );
 };

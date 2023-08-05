@@ -64,7 +64,7 @@ export const SidebarGPTO = () => {
                 <CalculatorIcon className="w-6 h-6 text-txt-light transition duration-75  group-hover:text-gray-900 " />
                 <span className="flex-1 ml-3 whitespace-nowrap">Modulo 1</span>
               </Link> */}
-              <a
+              <a id="linkModule1"
                 href="/geppetto/convert"
                 className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
               >
@@ -81,6 +81,7 @@ export const SidebarGPTO = () => {
                 <span className="flex-1 ml-3 whitespace-nowrap">Modulo 2</span>
               </Link> */}
               <a
+                id="linkModule2"
                 href="/geppetto/solver"
                 className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
               >
@@ -98,6 +99,7 @@ export const SidebarGPTO = () => {
                 <span className="flex-1 ml-3 whitespace-nowrap">Modulo 3</span>
               </Link> */}
               <a
+                id="linkModule3"
                 href="/geppetto/problemsolver"
                 className="hvr-grow flex items-center p-2 text-txt-light rounded-lg dark:text-white hover:bg-light-accent-2 dark:hover:bg-gray-700"
               >
