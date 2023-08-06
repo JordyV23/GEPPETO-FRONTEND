@@ -25,7 +25,7 @@ export const ImageModal = ({ imagenes }) => {
         className="p-4 focus:outline-0"
         onClick={() => onClickEvent()}
       >
-        <InformationCircleIcon className="h-8 w-8 text-info-color hvr-icon hvr-grow" />
+        <InformationCircleIcon id="info-btn" className="h-8 w-8 text-info-color hvr-icon hvr-grow" />
       </button>
       <Modal
         show={props.openModal === "default"}

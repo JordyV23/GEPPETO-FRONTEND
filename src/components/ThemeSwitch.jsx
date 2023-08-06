@@ -30,7 +30,7 @@ export const ThemeSwitch = () => {
 
   return (
     <button
-      className="hvr-grow absolute top-5 righ-5 w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+      className="hvr-grow  top-5 righ-5 w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
       onClick={onToggleBtn}
     >
       <div
