@@ -4,3 +4,5 @@ export * from "./Loader"
 export * from "./ImageModal"
 export * from "./ImageSlider"
 export * from "./ModalTutorial"
+export * from "./LinkComponent"
+

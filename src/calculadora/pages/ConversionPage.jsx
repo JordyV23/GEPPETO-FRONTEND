@@ -78,13 +78,11 @@ export const ConversionPage = () => {
       <TourProvider steps={stepsModule1} startAt={0}>
         <ModalTutorial
           info={[
-            "¡Hola! Parece que es tu primera vez por acáacá",
+            "¡Hola! Parece que es tu primera vez por acá...",
             "¿Te gustaría explorar con el tutorial?",
           ]}
-
           booleanState={false}
-
-          btnInstruction={'btnInstruction'}
+          btnInstruction={"Claro que Sí"}
         />
         <div className="flex flex-col h-screen animate__animated animate__fadeIn">
           {/* Inserta componente personalizado de navbar */}
@@ -92,7 +90,6 @@ export const ConversionPage = () => {
           <div className="flex">
             {/* Inserta componente personalizado de sidebar */}
             <SidebarGPTO />
-
             <div className="p-4 sm:ml-64 w-8/12">
               <div className="p-4  items-center w-full justify-center  rounded-lg dark:border-white mt-20">
                 <div className="flex items-center justify-center h-68 mb-4 rounded ">
