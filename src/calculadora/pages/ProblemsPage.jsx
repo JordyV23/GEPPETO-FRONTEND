@@ -58,74 +58,62 @@ export const ProblemsPage = () => {
 
   return (
     <>
-      <div className="flex flex-col h-screen animate__animated animate__fadeIn">
-        {/* Inserta componente personalizado de navbar */}
-        <NavbarGPTO />
+      <div className="p-4 border-2 items-center w-full justify-center border-white border-dashed rounded-lg dark:border-white mt-20">
+        <div className="flex items-center justify-center h-68 mb-4 rounded ">
+          <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
+            <div className="flex">
+              <div className="mr-2 w-full">
+                {/* Label para la expresion */}
+                <label
+                  htmlFor="expresion"
+                  className="block text-sm font-medium dark:text-white"
+                >
+                  Expreison Numerica:
+                </label>
 
-        <div className="flex">
-          {/* Inserta componente personalizado de sidebar */}
-          <SidebarGPTO />
-
-          <div className="p-4 sm:ml-64 w-8/12">
-            <div className="p-4 border-2 items-center w-full justify-center border-white border-dashed rounded-lg dark:border-white mt-20">
-              <div className="flex items-center justify-center h-68 mb-4 rounded ">
-                <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
-                  <div className="flex">
-                    <div className="mr-2 w-full">
-                      {/* Label para la expresion */}
-                      <label
-                        htmlFor="expresion"
-                        className="block text-sm font-medium dark:text-white"
-                      >
-                        Expreison Numerica:
-                      </label>
-
-                      {/* Input para la expresion a convertir */}
-                      <textarea
-                        id="expresion"
-                        type="text"
-                        rows={5}
-                        {...register("expresion")}
-                        placeholder="Ingrese su problema"
-                        className=" resize-none w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      />
-                    </div>
-
-                    {/* Btn que despliega el modal con el paso a paso */}
-                    <ImageModal imagenes={images} />
-                  </div>
-
-                  {/* Label para el resultado */}
-                  <label
-                    htmlFor="resultado"
-                    className="block text-sm font-medium dark:text-white mt-3"
-                  >
-                    Resultado:
-                  </label>
-                  {/* Input para mostrar el resultado */}
-                  <textarea
-                    id="resultado"
-                    rows={5}
-                    readOnly
-                    className="w-full resize-none px-3 py-2 border border-gray-300 rounded-md text-center focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                    value={resultado}
-                  />
-
-                  {/* Boton que acciona evento para consultar la API */}
-                  <Button
-                    type="submit"
-                    className="bg-light-accent dark:bg-dark-accent mt-3 mx-auto px-3 py-3 hvr-grow hvr-icon-spin"
-                  >
-                    Resolver
-                    <Cog8ToothIcon className="h-6 w-6 text-light hvr-icon" />
-                  </Button>
-                </form>
-
-                {/* Contenedor toast para notificacion de error */}
-                <ToastContainer />
+                {/* Input para la expresion a convertir */}
+                <textarea
+                  id="expresion"
+                  type="text"
+                  rows={5}
+                  {...register("expresion")}
+                  placeholder="Ingrese su problema"
+                  className=" resize-none w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                />
               </div>
+
+              {/* Btn que despliega el modal con el paso a paso */}
+              <ImageModal imagenes={images} />
             </div>
-          </div>
+
+            {/* Label para el resultado */}
+            <label
+              htmlFor="resultado"
+              className="block text-sm font-medium dark:text-white mt-3"
+            >
+              Resultado:
+            </label>
+            {/* Input para mostrar el resultado */}
+            <textarea
+              id="resultado"
+              rows={5}
+              readOnly
+              className="w-full resize-none px-3 py-2 border border-gray-300 rounded-md text-center focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              value={resultado}
+            />
+
+            {/* Boton que acciona evento para consultar la API */}
+            <Button
+              type="submit"
+              className="bg-light-accent dark:bg-dark-accent mt-3 mx-auto px-3 py-3 hvr-grow hvr-icon-spin"
+            >
+              Resolver
+              <Cog8ToothIcon className="h-6 w-6 text-light hvr-icon" />
+            </Button>
+          </form>
+
+          {/* Contenedor toast para notificacion de error */}
+          <ToastContainer />
         </div>
       </div>
     </>
