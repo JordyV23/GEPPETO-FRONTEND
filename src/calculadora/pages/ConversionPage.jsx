@@ -84,116 +84,107 @@ export const ConversionPage = () => {
           booleanState={false}
           btnInstruction={"Claro que Sí"}
         />
-        <div className="flex flex-col h-screen animate__animated animate__fadeIn">
-          {/* Inserta componente personalizado de navbar */}
-          <NavbarGPTO />
-          <div className="flex">
-            {/* Inserta componente personalizado de sidebar */}
-            <SidebarGPTO />
-            <div className="p-4 sm:ml-64 w-8/12">
-              <div className="p-4  items-center w-full justify-center  rounded-lg dark:border-white mt-20">
-                <div className="flex items-center justify-center h-68 mb-4 rounded ">
-                  <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
-                    <div className="flex">
-                      <div className="mr-2 w-2/5">
-                        {/* Label para input de numero a convertir */}
-                        <label
-                          htmlFor="numero"
-                          className="block text-sm font-medium dark:text-white"
-                        >
-                          Valor a Convertir:
-                        </label>
 
-                        {/* Input para el numero a convertir */}
-                        <input
-                          id="numero"
-                          {...register("numero")}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                        />
-                      </div>
+        <div className="p-4  items-center w-full justify-center  rounded-lg dark:border-white mt-20">
+          <div className="flex items-center justify-center h-68 mb-4 rounded ">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
+              <div className="flex">
+                <div className="mr-2 w-2/5">
+                  {/* Label para input de numero a convertir */}
+                  <label
+                    htmlFor="numero"
+                    className="block text-sm font-medium dark:text-white"
+                  >
+                    Valor a Convertir:
+                  </label>
 
-                      <div className="ml-6 mr-2 w-2/5">
-                        {/* Label para el select de base del numero a convertir */}
-                        <label
-                          htmlFor="baseInicial"
-                          className="block text-sm font-medium dark:text-white"
-                        >
-                          Base a Inicial:
-                        </label>
-
-                        {/* Select de la base del numero inicial */}
-                        <select
-                          id="baseInicial"
-                          {...register("baseInicial")}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                        >
-                          <option></option>
-                          {ops.map((op) => (
-                            <option key={op.value} value={op.value}>
-                              {op.label}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-
-                      {/* Btn que despliega el modal con el paso a paso */}
-                      <ImageModal imagenes={imagenes} />
-                    </div>
-
-                    <div className="mt-2">
-                      {/* Label para la base del resultado */}
-                      <label
-                        htmlFor="baseFinal"
-                        className="block text-sm font-medium dark:text-white"
-                      >
-                        Base Final:{" "}
-                      </label>
-
-                      {/* Select para la base del resultado */}
-                      <select
-                        id="baseFinal"
-                        {...register("baseFinal")}
-                        className="w-52 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      >
-                        <option></option>
-                        {ops.map((op) => (
-                          <option key={op.value} value={op.value}>
-                            {op.label}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    {/* Label para el resultado */}
-                    <label
-                      htmlFor="resultado"
-                      className="block text-sm font-medium dark:text-white mt-3"
-                    >
-                      Resultado:
-                    </label>
-                    {/* Input para mostrar el resultado */}
-                    <input
-                      id="resultado"
-                      readOnly
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      value={resultado}
-                    />
-
-                    {/* Boton que acciona evento para consultar la API */}
-                    <Button
-                      id="submit"
-                      type="submit"
-                      className="bg-light-accent dark:bg-dark-accent mt-3 mx-auto px-3 py-3 hvr-grow hvr-icon-spin"
-                    >
-                      Calcular
-                      <Cog8ToothIcon className="h-6 w-6 text-light hvr-icon" />
-                    </Button>
-                  </form>
-                  {/* Contenedor toast para notificacion de error */}
-                  <ToastContainer />
+                  {/* Input para el numero a convertir */}
+                  <input
+                    id="numero"
+                    {...register("numero")}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  />
                 </div>
+
+                <div className="ml-6 mr-2 w-2/5">
+                  {/* Label para el select de base del numero a convertir */}
+                  <label
+                    htmlFor="baseInicial"
+                    className="block text-sm font-medium dark:text-white"
+                  >
+                    Base a Inicial:
+                  </label>
+
+                  {/* Select de la base del numero inicial */}
+                  <select
+                    id="baseInicial"
+                    {...register("baseInicial")}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  >
+                    <option></option>
+                    {ops.map((op) => (
+                      <option key={op.value} value={op.value}>
+                        {op.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Btn que despliega el modal con el paso a paso */}
+                <ImageModal imagenes={imagenes} />
               </div>
-            </div>
+
+              <div className="mt-2">
+                {/* Label para la base del resultado */}
+                <label
+                  htmlFor="baseFinal"
+                  className="block text-sm font-medium dark:text-white"
+                >
+                  Base Final:{" "}
+                </label>
+
+                {/* Select para la base del resultado */}
+                <select
+                  id="baseFinal"
+                  {...register("baseFinal")}
+                  className="w-52 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                >
+                  <option></option>
+                  {ops.map((op) => (
+                    <option key={op.value} value={op.value}>
+                      {op.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Label para el resultado */}
+              <label
+                htmlFor="resultado"
+                className="block text-sm font-medium dark:text-white mt-3"
+              >
+                Resultado:
+              </label>
+              {/* Input para mostrar el resultado */}
+              <input
+                id="resultado"
+                readOnly
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                value={resultado}
+              />
+
+              {/* Boton que acciona evento para consultar la API */}
+              <Button
+                id="submit"
+                type="submit"
+                className="bg-light-accent dark:bg-dark-accent mt-3 mx-auto px-3 py-3 hvr-grow hvr-icon-spin"
+              >
+                Calcular
+                <Cog8ToothIcon className="h-6 w-6 text-light hvr-icon" />
+              </Button>
+            </form>
+            {/* Contenedor toast para notificacion de error */}
+            <ToastContainer />
           </div>
         </div>
       </TourProvider>

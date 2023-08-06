@@ -4,9 +4,14 @@ import { Button, Modal } from "flowbite-react";
 import { useTour } from "@reactour/tour";
 
 export const ModalTutorial = ({ info, booleanState, btnInstruction }) => {
-  const storedValue = localStorage.getItem("showGeppetoInstruccions1");
+  const storedValue = localStorage.getItem("showGeppetoInstruccions");
+
+  if (storedValue === null) {
+    localStorage.setItem("showGeppetoInstruccions", false);
+  }
+
   const [openModal, setOpenModal] = useState(
-    storedValue!='false' ? undefined : "default"
+    storedValue != "false" ? undefined : "default"
   );
 
   /**
@@ -24,7 +29,7 @@ export const ModalTutorial = ({ info, booleanState, btnInstruction }) => {
    */
   const startTutorial = () => {
     props.setOpenModal(undefined);
-    localStorage.setItem("showGeppetoInstruccions1", booleanState);
+    localStorage.setItem("showGeppetoInstruccions", booleanState);
     setIsOpen(true);
   };
 
@@ -32,7 +37,7 @@ export const ModalTutorial = ({ info, booleanState, btnInstruction }) => {
    * Funcion que cierra el modal y no vuelve a mostrar el recorrido guiado
    */
   const cancelTutorial = () => {
-    localStorage.setItem("showGeppetoInstruccions1", true);
+    localStorage.setItem("showGeppetoInstruccions", true);
     props.setOpenModal(undefined);
   };
 
