@@ -3,8 +3,6 @@ import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
 import {
   Loader,
-  NavbarGPTO,
-  SidebarGPTO,
   ImageModal,
   ModalTutorial,
 } from "../components";
