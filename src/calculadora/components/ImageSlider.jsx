@@ -1,24 +1,6 @@
-import React, { useEffect, useState } from "react";
 
-export const ImageSlider = ({ imagenes,flagParam }) => {
-  
-  const [flag, setFlag] = useState(0)
-  const [images, setImages] = useState([])
+export const ImageSlider = ({images}) => {
 
-
-  if(flagParam != flag){
-    setFlag(flagParam);
-    setImages(imagenes);
-  }
-
-  useEffect(()=> {
-    if(flagParam != flag){
-      setFlag(flagParam);
-      setImages(imagenes);
-      console.log("Entra")
-
-    }
-  }, [flagParam])
 
   return (
     <>
