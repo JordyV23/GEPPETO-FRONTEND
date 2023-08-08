@@ -1,12 +1,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
-import {
-  Loader,
-  ImageModal,
-  ModalTutorial,
-  LoaderContext,
-} from "../components";
+import { ImageModal, ModalTutorial, LoaderContext } from "../components";
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { toast } from "react-toastify";
