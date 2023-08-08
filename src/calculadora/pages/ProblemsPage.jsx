@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 export const ProblemsPage = () => {
   //***Hook para manejo de formulario***//
   const { register, handleSubmit } = useForm();
@@ -21,8 +21,8 @@ export const ProblemsPage = () => {
   //***Funcion para consulta a la API para obtener resultado de la conversion***//
   const onSubmit = async ({ expresion }) => {
     //Cambia el estado de carga a true
-   // setloading(true);
-    showLoader()
+    // setloading(true);
+    showLoader();
     //Envio de datos a la api por POST
     const { data: datos } = await axios.post(
       `${import.meta.env.VITE_APIURL}numbes/`,
@@ -33,7 +33,7 @@ export const ProblemsPage = () => {
 
     //Cambia el estado de carga a falso
     //setloading(false);
-    hideLoader()
+    hideLoader();
     //Si el status que viene de la API es true, continua
     if (datos.Status == "True") {
       setResultado(datos.solucion);
@@ -44,7 +44,7 @@ export const ProblemsPage = () => {
   };
 
   //Arreglo de imagenes con el paso a paso de este modulo
-  const images=[
+  const images = [
     "/guides/mod2/1.png",
     "/guides/mod2/2.png",
     "/guides/mod2/3.png",

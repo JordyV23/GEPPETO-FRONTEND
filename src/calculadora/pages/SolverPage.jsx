@@ -1,20 +1,16 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
-import {
-  ImageModal,
-  ModalTutorial,
-  LoaderContext
-} from "../components";
+import { ImageModal, ModalTutorial, LoaderContext } from "../components";
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
-import {  toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
 import { TourProvider } from "@reactour/tour";
 import { stepsModule2 } from "../../helpers/stepsModule2";
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 export const SolverPage = () => {
   //***Hook para manejo de formulario***//
   const { register, handleSubmit } = useForm();
@@ -28,7 +24,7 @@ export const SolverPage = () => {
   //***Funcion para consulta a la API para obtener resultado de la conversion***//
   const onSubmit = async ({ expresion }) => {
     //Cambia el estado de carga a true
-    showLoader()
+    showLoader();
 
     //Envio de datos a la api por POST
     const { data: datos } = await axios.post(
@@ -39,7 +35,7 @@ export const SolverPage = () => {
     );
 
     //Cambia el estado de carga a falso
-    hideLoader()
+    hideLoader();
 
     //Si el status que viene de la API es true, continua
     if (datos.Status == "True") {

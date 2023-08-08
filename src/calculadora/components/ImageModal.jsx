@@ -8,10 +8,13 @@ import { ImageSlider } from "./ImageSlider";
 export const ImageModal = ({ imagenes }) => {
   const [openModal, setOpenModal] = useState("");
 
+  const [flag, setFlag] = useState(1);
+
   const props = { openModal, setOpenModal };
   
   const onClickEvent = () => {
     props.setOpenModal("default")
+    setFlag(flag+1)
   }
   
 
@@ -30,7 +33,7 @@ export const ImageModal = ({ imagenes }) => {
       >
         <Modal.Header className="dark:bg-dark-accent">Modo de Uso</Modal.Header>
         <Modal.Body className="dark:bg-dark-accent">
-          <ImageSlider images={imagenes} />
+          <ImageSlider imagenes={imagenes} flagParam={flag} />
         </Modal.Body>
         <Modal.Footer className="dark:bg-dark-accent">
           <Button

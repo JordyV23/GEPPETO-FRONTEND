@@ -6,15 +6,15 @@ export const NavbarGPTO = () => {
   return (
     <>
       <nav className="animate__animated animate__fadeIn fixed top-0 z-50 w-full bg-light-accent border-b border-light-accent dark:bg-dark-accent dark:border-dark-accent">
-        <div className="px-3 py-3 lg:px-5 lg:pl-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center justify-start">
+        <div className="animate__animated animate__fadeIn px-3 py-3 lg:px-5 lg:pl-3">
+          <div className="animate__animated animate__fadeIn  flex items-center justify-between">
+            <div className="animate__animated animate__fadeIn  flex items-center justify-start">
               <button
                 data-drawer-target="logo-sidebar"
                 data-drawer-toggle="logo-sidebar"
                 aria-controls="logo-sidebar"
                 type="button"
-                className="inline-flex items-center p-2 text-sm text-white rounded-lg sm:hidden hover:bg-light-accent-2 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:hover:bg-main-dark "
+                className="animate__animated animate__fadeIn  inline-flex items-center p-2 text-sm text-white rounded-lg sm:hidden hover:bg-light-accent-2 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:hover:bg-main-dark "
               >
                 <span className="sr-only">Open sidebar</span>
                 <svg
@@ -31,27 +31,24 @@ export const NavbarGPTO = () => {
                   ></path>
                 </svg>
               </button>
-              <a href="/gpto/home" className="flex ml-2 md:mr-24">
-                <img
-                  src="/vite.svg"
-                  className="h-8 mr-3"
-                  alt="GPPETTO Logo"
-                />
-                <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">
+              <a
+                href="/gpto/home"
+                className="flex ml-2 md:mr-24 animate__animated animate__fadeIn "
+              >
+                <img src="/vite.svg" className="h-8 mr-3" alt="GPPETTO Logo" />
+                <span className="animate__animated animate__fadeIn  self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">
                   Geppetto
                 </span>
               </a>
             </div>
 
-            <div className="flex items-center">
+            <div className="animate__animated animate__fadeIn flex items-center">
               <div className="flex items-center ml-3">
                 <div>
-                <ThemeSwitch />
+                  <ThemeSwitch />
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
       </nav>
