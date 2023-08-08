@@ -5,7 +5,7 @@ import { Footer } from "flowbite-react";
 export const FooterLanding = () => {
   return (
     <>
-      <Footer container className="bg-light-accent-dark mt-4 text-white">
+      <Footer container className="bg-light-accent-dark mt-4 text-white  dark:bg-dark-accent dark:border-dark-accent">
         <div className="w-full text-center">
           <div className="w-full justify-between sm:flex sm:items-center sm:justify-between text-white">
             <Footer.Brand
