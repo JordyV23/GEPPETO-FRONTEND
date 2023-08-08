@@ -1,6 +1,6 @@
 "use client";
 
-import { ThemeSwitch } from "./ThemeSwitch";
+import { ThemeSwitch } from "../../components";
 
 export const NavbarGPTO = () => {
   return (
@@ -21,7 +21,7 @@ export const NavbarGPTO = () => {
               <ThemeSwitch />
             </div>
             <div className="flex items-center ml-3">
-              <div>
+              {/* <div>
                 <button
                   type="button"
                   className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300"
@@ -35,7 +35,7 @@ export const NavbarGPTO = () => {
                     alt="user photo"
                   />
                 </button>
-              </div>
+              </div> */}
               <div
                 className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
                 id="dropdown-user"
@@ -115,7 +115,7 @@ export const NavbarGPTO = () => {
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                       role="menuitem"
                     >
-                      Jose Gonzalez
+                      Jose Gonzales
                     </a>
                   </li>
                   <li>

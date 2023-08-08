@@ -2,8 +2,11 @@ import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
 
 export const ThemeSwitch = () => {
+  //** variable que almacena en el localstorage en el dispositivo **//
+  const storedValue = localStorage.getItem("geppeto-theme");
+
   //***Hook para cambio de tema***//
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState( storedValue ? storedValue : "light" );
 
   //***Hook para observar el momento en el que cambie el valor de el tema***//
   useEffect(() => {
@@ -17,7 +20,13 @@ export const ThemeSwitch = () => {
   //Funcion que cambia el tema al hacer click
   const onToggleBtn = () => {
     setTheme(theme === "dark" ? "light" : "dark");
+    localStorage.setItem("geppeto-theme", theme === "dark" ? "light" : "dark");
   };
+
+  //**Verifica si no existe la variable en el localstorage */
+  if (!storedValue) {
+    localStorage.setItem("geppeto-theme", "light");
+  } 
 
   return (
     <button
