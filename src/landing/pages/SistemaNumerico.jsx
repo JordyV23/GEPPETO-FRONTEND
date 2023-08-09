@@ -40,7 +40,7 @@ export const SistemaNumerico = () => {
                     <Concepto conceptos={Conceptos.slice(1,4)} />
 
                 </div>
-                
+
                 <FooterLanding />
 
             </div>

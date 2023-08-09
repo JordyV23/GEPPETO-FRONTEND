@@ -16,7 +16,7 @@ export const Concepto = ({ conceptos }) => {
                         {img && <img className="mx-auto p-6" src={img} alt={titulo} />}
                     </div>
                     <div >
-                        {videoId && <YouTubeVideo videoId={"videoId"} />}
+                        {videoId && <YouTubeVideo videoId={videoId} />}
                     </div>
                 </div>
             ))}
