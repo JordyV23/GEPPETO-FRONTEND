@@ -72,11 +72,11 @@ export const ConversionPage = () => {
     <>
         <ModalTutorial
           info={[
-            "¡Hola! Parece que es tu primera vez por acá...",
-            "¿Te gustaría explorar con el tutorial?",
+            "¡Hola! 👻 Parece que es tu primera vez por acá...",
+            "¿Te gustaría explorar con el tutorial? ",
           ]}
           booleanState={false}
-          btnInstruction={"Claro que Sí"}
+          btnInstruction={"Claro que Sí 👍"}
         />
 
         <div className="p-4  items-center w-full justify-center  rounded-lg dark:border-white mt-20">

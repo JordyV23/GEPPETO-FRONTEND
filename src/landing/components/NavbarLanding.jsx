@@ -2,6 +2,7 @@
 
 import { Button, Navbar } from 'flowbite-react';
 import { ThemeSwitch } from '../../components';
+import { Link } from 'react-router-dom';
 
 export const NavbarLanding = () => {
   return (
@@ -19,7 +20,7 @@ export const NavbarLanding = () => {
       </Navbar.Brand>
      
       <div className="flex order-3">
-        <a href='/geppetto/convert' className=' bg-light-accent-2 hover:bg-light-accent py-2 px-4 text-white font-bold rounded-lg dark:bg-main-dark'>Calcular</a>
+        <Link to={"/geppetto/convert"} className=' bg-light-accent-2 hover:bg-light-accent py-2 px-4 text-white font-bold rounded-lg dark:bg-main-dark'>Calcular</Link>
         <Navbar.Toggle />
         
       </div>
@@ -27,11 +28,11 @@ export const NavbarLanding = () => {
         <ThemeSwitch />
         </div>
       <Navbar.Collapse>
-        <Navbar.Link  className='text-txt-light font-bold  p-2 text-base' active href="/gpto/home">
+        <Navbar.Link className='text-txt-light font-bold  p-2 text-base' active href="/gpto/home">
           <p>Home</p>
         </Navbar.Link>
         {/*<Navbar.Link className='text-txt-light font-bold text-base' href="/gpto/sistemaNumerico">Sistema de Numeración</Navbar.Link>*/}
-        <Navbar.Link className='text-txt-light font-bold text-base' href="/gpto/home/#funciones">Funciones</Navbar.Link>
+        <Navbar.Link className='text-txt-light font-bold text-base' href="#funciones">Funciones</Navbar.Link>
 
       </Navbar.Collapse>
      
