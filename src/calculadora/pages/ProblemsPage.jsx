@@ -40,7 +40,7 @@ export const ProblemsPage = () => {
       return;
     }
     //Si no, muestra un toast
-    toast.warning("Revisa si son numberos bien escritos :c");
+    toast.warning("Uy, a nuestra IA se le olvidó como resolver este problema 🙈");
   };
 
   //Arreglo de imagenes con el paso a paso de este modulo

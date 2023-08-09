@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { NavbarGPTO, SidebarGPTO } from "../components";
 import { TourProvider } from "@reactour/tour";
-import { stepsModule1 } from "../../helpers";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { steps } from "../../helpers/steps";
 
 export const GPTOLayout = ({ children }) => {
-  const steps = JSON.parse(localStorage.getItem("GeppetoInstruccions"));
+  //const steps = JSON.parse(localStorage.getItem("GeppetoInstruccions"));
 
   const [images, setImages] = useState(localStorage.getItem("images"));
   const loca = useLocation();
@@ -15,9 +15,30 @@ export const GPTOLayout = ({ children }) => {
     setImages(JSON.parse(localStorage.getItem("images")));
   }, [loca]);
 
+  const redirect = useNavigate();
+  const [step, setStep] = useState(0);
+
+  const setCurrentStep = (step) => {
+    switch (step) {
+      case 6:
+        redirect("/geppetto/solver", true);
+        break;
+      default:
+        break;
+    }
+    setStep(step);
+  };
+
   return (
     <>
-      <TourProvider steps={steps} startAt={0}>
+      <TourProvider
+        steps={steps}
+        startAt={0}
+        currentStep={step}
+        setCurrentStep={setCurrentStep}
+        disableKeyboardNavigation={['left']}
+        showPrevNextButtons={false}
+      >
         {/* <Navbar /> */}
         <NavbarGPTO images={images} />
 
