@@ -6,7 +6,7 @@ export const Loader = () => {
   const storedTtheme = localStorage.getItem("geppeto-theme");
   const { isLoading } = useContext(LoaderContext);
   return  isLoading && (
-      <div className="flex items-center justify-center h-screen animate__animated animate__fadeIn  z-50 " id="loader">
+      <div className="fixed inset-0 flex items-center justify-center bg-main-light dark:bg-main-dark z-50" id="loader">
         <ThreeCircles
           height="100"
           width="100"

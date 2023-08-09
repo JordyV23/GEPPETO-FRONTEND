@@ -10,9 +10,8 @@ export const GeppettoRoutes = () => {
   return (
     <LoaderProvider>
       <TourProvider steps={steps} startAt={0}>
-        <Loader />
-
         <GPTOLayout>
+          <Loader />
           <Routes>
             <Route path="/convert" element={<ConversionPage />} />
             <Route path="/solver" element={<SolverPage />} />

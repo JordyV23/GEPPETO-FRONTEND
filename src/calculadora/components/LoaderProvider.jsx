@@ -10,7 +10,6 @@ const LoaderProvider = ({ children }) => {
   };
 
   const hideLoader = () => {
-    
     setIsLoading(false);
   };
 
