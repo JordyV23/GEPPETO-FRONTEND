@@ -1,14 +1,18 @@
 'use client';
 import { Conceptos } from '../helpers';
-
+import { Link } from "react-router-dom";
 import { Accordion } from 'flowbite-react';
+import {ImageModalHome} from './ImageModalHome.jsx'
+
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+
 
 export const AccordionLanding = () => {
   return (
-    <Accordion className='bg-light-accent-dark p-6  my-12 rounded-md  dark:bg-dark-accent dark:border-dark-accent'>
-      {Conceptos.map(({ concepto, titulo}, i) => (
-          <Accordion.Panel key={i} >
-          <Accordion.Title className=' bg-light-accent-dark text-white font-bold dark:bg-dark-accent  dark:text-white hover:bg-light-accent'>
+    <Accordion collapseAll className='bg-light-accent p-6 my-12 rounded-md  dark:bg-dark-accent dark:border-dark-accent'>
+      {Conceptos.map(({ concepto, titulo,link, videoId, img}, i) => (
+          <Accordion.Panel   key={i} >
+          <Accordion.Title className=' bg-light-accent text-white font-bold dark:bg-dark-accent  dark:text-white hover:bg-light-accent-dark'>
            {titulo}
           </Accordion.Title>
           <Accordion.Content>
@@ -17,8 +21,10 @@ export const AccordionLanding = () => {
                 {concepto}
               </p>
             </p>
-  
-            
+
+            <ImageModalHome content={{ img, videoId }}>
+            </ImageModalHome>
+
           </Accordion.Content>
         </Accordion.Panel>
 

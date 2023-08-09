@@ -5,16 +5,16 @@ import { ThemeSwitch } from '../../components';
 
 export const NavbarLanding = () => {
   return (
-    <Navbar fluid rounded className='bg-light-accent-dark p-6 text-white  rounded-md  dark:bg-dark-accent dark:border-dark-accent'>
+    <Navbar fluid rounded className='bg-light-accent p-6 text-white  rounded-md  dark:bg-dark-accent dark:border-dark-accent'>
       <Navbar.Brand href="https://flowbite-react.com">
       {/* Cambiar Imagen */}
         <img
           alt="GeppetoLogo"
           className="mr-3 h-6 sm:h-9"
-          src="/logo-utn.svg"
+          src="/logo-gpto2.svg"
         />
         <span className=" self-center wor whitespace-nowrap">
-          Geppeto
+          GEPPETTO
         </span>
       </Navbar.Brand>
      
@@ -30,7 +30,7 @@ export const NavbarLanding = () => {
         <Navbar.Link  className='text-txt-light font-bold  p-2 text-base' active href="/gpto/home">
           <p>Home</p>
         </Navbar.Link>
-        <Navbar.Link className='text-txt-light font-bold text-base' href="/gpto/sistemaNumerico">Sistema de Numeración</Navbar.Link>
+        {/*<Navbar.Link className='text-txt-light font-bold text-base' href="/gpto/sistemaNumerico">Sistema de Numeración</Navbar.Link>*/}
         <Navbar.Link className='text-txt-light font-bold text-base' href="/gpto/home/#funciones">Funciones</Navbar.Link>
 
       </Navbar.Collapse>
