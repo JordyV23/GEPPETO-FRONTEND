@@ -8,7 +8,7 @@ export const AppRouter = () => {
         <Routes>
             <Route path="/gpto/*" element={<LandingRoutes/>}/>
             <Route path="/geppetto/*" element={<GeppettoRoutes/>}/>
-            <Route path="/*" element={<Navigate to="/geppetto"/>}/>
+            <Route path="/*" element={<Navigate to="/gpto"/>}/>
         </Routes>
     )
 

@@ -21,10 +21,10 @@ export const Home = () => {
             "con sistemas de numeración, todo en una plataforma intuitiva y amigable."}
             titulo={"Descubre un universo numérico a tu alcance: simplifica tus problemas matemáticos."} />
 
-          <div className="mx-6 sm:my-20 ">
-            <div className="mx-auto mb-6" id="funciones">
-              <h5 className="  font-semibold sm:text-2xl dark:text-white mx-auto text-center mb-6 ">Nuestro programa consta de tres funciones que te permitirán llevar tus cálculos al siguiente nivel:</h5>
-            </div>
+        <div className="mx-6 sm:my-20 ">
+          <div className="mx-auto mb-6" id="funciones">
+            <h5 className="  font-semibold sm:text-2xl dark:text-white mx-auto text-center mb-6 ">Nuestro programa consta de tres funciones que te permitirán llevar tus cálculos al siguiente nivel:</h5>
+          </div>
 
             <div className="flex flex-col items-center md:space-x-reverse space-y-1   flex-wrap  md:flex-row  justify-evenly " >
               <CardLanding/>
