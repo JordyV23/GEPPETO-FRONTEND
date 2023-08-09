@@ -4,17 +4,26 @@ import { Concepto } from "../components/Concepto";
 import { FooterLanding } from "../components/FooterLanding";
 import { Jumbotron } from "../components/Jumbotron";
 import { List } from "../components/List";
-import { YouTubeVideo } from "../components/YouTubeVideo";
+import { YouTubeVideo } from "../components/YouTubeVideo"; 
+import { Conceptos } from "../helpers";
 
 
 export const SistemaNumerico = () => {
 
     const items = ["Principio de Orden", "Principio de la Base", " Principio Posicional"]
+    const block1=[Conceptos[0]]
+    const block2=[Conceptos[1],Conceptos[2],Conceptos[3]]
+
+    console.log(Conceptos[0])
 
     return (
         <>
             <div className=" bg-main-light dark:bg-main-dark">
                 <NavbarLanding />
+
+              
+
+                <div className="md:mx-14">
 
                 <Jumbotron img={"/math.png"} text={"Los sistemas de numeración son la esencia misma de cómo representamos las cantidades numéricas en" +
                     " nuestra vida cotidiana. Aquí encontrarás una guía completa sobre los principios fundamentales de los sistemas numéricos, cómo funcionan y cómo aplicarlos" +
@@ -22,48 +31,16 @@ export const SistemaNumerico = () => {
                     "numéricas, las cifras bien escritas, la conversión entre sistemas y la evaluación de expresiones."}
                     titulo={"Sistema de Numeración y sus principios"} />
 
-                <div className="md:mx-14">
-
-
-                    <Concepto className="" titulo={"¿Qué es un sistema de numeración?"} concepto={"Un sistema de numeración es un conjunto de reglas y principios utilizados para representar correctamente los números," +
-                        " para realizar operaciones matemáticas. Existen varios sistemas de numeración utilizados en todo el planeta, pero los más comunes son el sistema " +
-                        "decimal, el binario y el hexadecimal, el sistema que usamos diariamente es el decimmal es el que usualmente usamos para representar cantidades en la vida cotidiana."}
-                    />
+                      <Concepto conceptos={[Conceptos[0]]} />
+          
                     <div className="p-2">
-                        <h3 class="font-semibold  dark:text-white mx-auto ">Entre estos principios tenemos:</h3>
+                        <h3 className="font-semibold  dark:text-white mx-auto ">Entre estos principios tenemos:</h3>
                         <List items={items} />
                     </div>
-                    <img className="mx-auto my-6 max-w-md" src='/public/SistemaNum.png' alt='Sistema de Numeración' />
-
-                    <Concepto className="" titulo={"Principio de Orden"} concepto={"Un sistema de numeración es un conjunto de reglas y principios utilizados para representar correctamente los números," +
-                        " para realizar operaciones matemáticas. Existen varios sistemas de numeración utilizados en todo el planeta, pero los más comunes son el sistema " +
-                        "decimal, el binario y el hexadecimal, el sistema que usamos diariamente es el decimmal es el que usualmente usamos para representar cantidades en la vida cotidiana."}
-                    />
-                    <YouTubeVideo videoId={'CmGnVhA-6dc'}/>
-                    <Concepto className="" titulo={"Principio de la Base"} concepto={"Un sistema de numeración es un conjunto de reglas y principios utilizados para representar correctamente los números," +
-                        " para realizar operaciones matemáticas. Existen varios sistemas de numeración utilizados en todo el planeta, pero los más comunes son el sistema " +
-                        "decimal, el binario y el hexadecimal, el sistema que usamos diariamente es el decimmal es el que usualmente usamos para representar cantidades en la vida cotidiana."}
-                    />
-
-
-                    <Concepto className="" titulo={"Principio Posicional"} concepto={"Un sistema de numeración es un conjunto de reglas y principios utilizados para representar correctamente los números," +
-                        " para realizar operaciones matemáticas. Existen varios sistemas de numeración utilizados en todo el planeta, pero los más comunes son el sistema " +
-                        "decimal, el binario y el hexadecimal, el sistema que usamos diariamente es el decimmal es el que usualmente usamos para representar cantidades en la vida cotidiana."}
-                    />
+                    <Concepto conceptos={Conceptos.slice(1,4)} />
 
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
+                
                 <FooterLanding />
 
             </div>
