@@ -1,4 +1,4 @@
-export const stepsModule1 = [
+export const steps = [
   {
     selector: '#numero',
     content: 'Aquí debes de ingresar el número que deseas convertir',
@@ -23,10 +23,21 @@ export const stepsModule1 = [
     selector: "#info-btn",
     content: "¡Siempre que quieras repasar la información, puedes volver aquí a revisarla!"
   },
+  //Modulo 2 
   {
-    selector: "#linkModule2",
-    content: "¡Probemos pasar a la siguiente página y descubramos que podemos hacer!"
-  }
-  
-  
+    selector: '#expresion',
+    content: 'Aquí debes de ingresar una expresión de números bien escritos para resolverla',
+  },
+  {
+    selector: '#submit',
+    content: 'Una vez que hayas ingresado la expresión, debes de dar clic al botón "Resolver"',
+  },
+  {
+    selector: '#resultado',
+    content: 'Una vez se haya terminado de resolver la expresión, deberías de ver aquí el resultado',
+  },
+  {
+    selector: "#info-btn",
+    content: "¡Al igual que en la página anterior, siempre que quieras repasar la información de uso, puedes volver aquí a revisarla!",
+  },
 ]

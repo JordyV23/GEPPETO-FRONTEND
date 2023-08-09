@@ -1,2 +1,1 @@
-export * from './stepsModule1'
-export * from './stepsModule2'
+export * from './steps'
