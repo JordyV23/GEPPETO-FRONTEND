@@ -12,8 +12,6 @@ import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
-import { TourProvider } from "@reactour/tour";
-import { stepsModule1 } from "../../helpers";
 import React, { useContext } from 'react';
 
 
@@ -54,7 +52,7 @@ export const ConversionPage = () => {
       return;
     }
     //Si no, muestra un toast
-    toast.warning("Revisa tu conversion :c");
+    toast.warning("Revisa tu conversion 😖🙁");
   };
 
  /* if (loading) {
@@ -72,7 +70,6 @@ export const ConversionPage = () => {
 
   return (
     <>
-      <TourProvider steps={stepsModule1} startAt={0}>
         <ModalTutorial
           info={[
             "¡Hola! Parece que es tu primera vez por acá...",
@@ -182,7 +179,6 @@ export const ConversionPage = () => {
             </form>
           </div>
         </div>
-      </TourProvider>
     </>
   );
 };
