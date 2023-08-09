@@ -1,11 +1,16 @@
 "use client";
 
+import { useContext } from "react";
 import { ThemeSwitch } from "../../components";
+import { LoaderContext } from "./LoaderProvider";
 
 export const NavbarGPTO = () => {
+
+  const { isLoading } = useContext(LoaderContext);
+
   return (
     <>
-      <nav className="animate__animated animate__fadeIn fixed top-0 z-50 w-full bg-light-accent border-b border-light-accent dark:bg-dark-accent dark:border-dark-accent">
+      <nav className={ isLoading ? "invisible fixed top-0 z-50 w-full bg-light-accent border-b border-light-accent dark:bg-dark-accent dark:border-dark-accent" : "animate__animated animate__fadeIn fixed top-0 z-50 w-full bg-light-accent border-b border-light-accent dark:bg-dark-accent dark:border-dark-accent" }>
         <div className="animate__animated animate__fadeIn px-3 py-3 lg:px-5 lg:pl-3">
           <div className="animate__animated animate__fadeIn  flex items-center justify-between">
             <div className="animate__animated animate__fadeIn  flex items-center justify-start">
@@ -35,9 +40,9 @@ export const NavbarGPTO = () => {
                 href="/gpto/home"
                 className="flex ml-2 md:mr-24 animate__animated animate__fadeIn "
               >
-                <img src="/vite.svg" className="h-8 mr-3" alt="GPPETTO Logo" />
+                <img src="/logo-gpto2.svg" className="h-8 mr-3" alt="GPPETTO Logo" />
                 <span className="animate__animated animate__fadeIn  self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">
-                  Geppetto
+                  GEPPETTO
                 </span>
               </a>
             </div>
