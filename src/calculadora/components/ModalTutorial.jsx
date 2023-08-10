@@ -2,9 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { Button, Modal } from "flowbite-react";
 import { useTour } from "@reactour/tour";
+import { instructionsChecker } from "../../helpers";
 
 export const ModalTutorial = ({ info, booleanState, btnInstruction }) => {
-  const storedValue = localStorage.getItem("showGeppetoInstruccions");
+  const storedValue = instructionsChecker();
 
   if (storedValue === null) {
     localStorage.setItem("showGeppetoInstruccions", false);

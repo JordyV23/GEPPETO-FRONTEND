@@ -1,5 +1,17 @@
 export const steps = [
   {
+    selector: "#ConversionPage",
+    content: "Bienvenido al tutorial! Presiona la tecla de direccion derecha para continuar"
+  },
+  {
+    selector: "#pdfGuide",
+    content: "Para empezar, cuando quieras ver una explicación muy detallada acerca de el uso de esta herramienta, puedes hacer clic aquí, te redirigirá a una pagina en donde verás una guia de usuario en PDF"
+  },
+  {
+    selector: "#ConversionPage",
+    content: "Esta es la pagina de conversion entre numerales"
+  },
+  {
     selector: '#numero',
     content: 'Aquí debes de ingresar el número que deseas convertir',
   },
@@ -23,7 +35,15 @@ export const steps = [
     selector: "#info-btn",
     content: "¡Siempre que quieras repasar la información, puedes volver aquí a revisarla!"
   },
-  //Modulo 2 
+  {
+    selector: "#ConversionPage",
+    content: "Ahora nos moveremos a la siguiente pagina"
+  },
+  //Modulo 2
+  {
+    selector: "#SolverPage",
+    content: "Esta es la pagina para resolver expresiones de números bien escritos"
+  },
   {
     selector: '#expresion',
     content: 'Aquí debes de ingresar una expresión de números bien escritos para resolverla',
