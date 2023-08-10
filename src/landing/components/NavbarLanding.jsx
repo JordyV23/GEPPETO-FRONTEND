@@ -37,8 +37,12 @@ export const NavbarLanding = () => {
         <Navbar.Link className='text-txt-light font-bold  p-2 text-base' href="/gpto/home">
           <p>Home</p>
         </Navbar.Link>
+
         {/*<Navbar.Link className='text-txt-light font-bold text-base' href="/gpto/sistemaNumerico">Sistema de Numeración</Navbar.Link>*/}
+        <Navbar.Link className='text-txt-light font-bold text-base' href="#conceptos">Sistema de Numeración</Navbar.Link>
         <Navbar.Link className='text-txt-light font-bold text-base' href="#funciones">Funciones</Navbar.Link>
+
+
       </Navbar.Collapse>
     </Navbar>
   );
