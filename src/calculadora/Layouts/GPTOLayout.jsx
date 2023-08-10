@@ -20,7 +20,7 @@ export const GPTOLayout = ({ children }) => {
 
   const setCurrentStep = (step) => {
     switch (step) {
-      case 6:
+      case 10:
         redirect("/geppetto/solver", true);
         break;
       default:

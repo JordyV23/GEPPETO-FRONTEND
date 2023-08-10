@@ -27,7 +27,7 @@ export const Home = () => {
               <CardLanding  titulo={"Conversión de Bases Numéricas"} descripcion={"¿Necesitas convertir un número de una base a otra? Nuestro primer módulo te brinda la capacidad de realizar conversiones precisas entre bases numéricas."}
                 imagen={"/base.png"} ruta={'/geppetto/convert'} />
               <CardLanding  titulo={"Evaluación de Expresiones Numéricas"} descripcion={"¿Tienes expresiones numéricas complejas que resolver? Nuestro segundo módulo ha sido diseñado para analizar y evaluar expresiones correctamente escritas."}
-                imagen={"/public/expresion.png"} ruta={'/geppetto/solver'} />
+                imagen={"/expresion.png"} ruta={'/geppetto/solver'} />
               <CardLanding  titulo={"Resolución  Problemas"} descripcion={"¿Quieres aplicar conceptos de sistemas de numeración a problemas del mundo real? Nuestro tercer módulo te ofrece la capacidad de resolver problemas prácticos con conversión de sistemas de numeración."}
                 imagen={"/problema.png"} ruta={'/geppetto/problemsolver'} />
 

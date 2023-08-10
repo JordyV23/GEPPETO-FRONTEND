@@ -61,7 +61,7 @@ export const SolverPage = () => {
           booleanState={false}
           btnInstruction={"Continuemos"}
         /> */}
-        <div className="p-4 border-2 items-center w-full justify-center border-white border-dashed rounded-lg dark:border-white mt-20">
+        <div id="SolverPage" className="p-4 border-2 items-center w-full justify-center border-white border-dashed rounded-lg dark:border-white mt-20">
           <div className="flex items-center justify-center h-68 mb-4 rounded ">
             <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
               <div className="flex">
