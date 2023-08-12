@@ -7,4 +7,7 @@ export default defineConfig({
   preview: {
     port: 8080,
   },
+  define: {
+    global: {},
+  }
 })
