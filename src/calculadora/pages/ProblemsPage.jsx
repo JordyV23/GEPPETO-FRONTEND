@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { Button } from "flowbite-react";
+import { Button, Textarea } from "flowbite-react";
 import { LoaderContext, ImageModal } from "../components";
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
@@ -9,6 +9,10 @@ import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
 import React, { useContext } from "react";
+import { addStyles, EditableMathField } from "react-mathquill";
+
+addStyles();
+
 export const ProblemsPage = () => {
   //***Hook para manejo de formulario***//
   const { register, handleSubmit } = useForm();
@@ -25,9 +29,9 @@ export const ProblemsPage = () => {
     showLoader();
     //Envio de datos a la api por POST
     const { data: datos } = await axios.post(
-      `${import.meta.env.VITE_APIURL}numbes/`,
+      `${import.meta.env.VITE_APIURL}problemasAI/`,
       {
-        cifras: expresion,
+        prompt: latex,
       }
     );
 
@@ -35,13 +39,17 @@ export const ProblemsPage = () => {
     //setloading(false);
     hideLoader();
     //Si el status que viene de la API es true, continua
-    if (datos.Status == "True") {
-      setResultado(datos.solucion);
+    if (datos.Status == "true") {
+      setResultado(datos.Respuesta);
       return;
     }
     //Si no, muestra un toast
-    toast.warning("Uy, a nuestra IA se le olvidó como resolver este problema 🙈");
+    toast.warning(
+      "Uy, a nuestra IA se le olvidó como resolver este problema 🙈"
+    );
   };
+
+  const [latex, setLatex] = useState("");
 
   //Arreglo de imagenes con el paso a paso de este modulo
   const images = [
@@ -67,13 +75,21 @@ export const ProblemsPage = () => {
                 </label>
 
                 {/* Input para la expresion a convertir */}
-                <textarea
+                {/* <textarea
                   id="expresion"
                   type="text"
                   rows={5}
                   {...register("expresion")}
                   placeholder="Ingrese su problema"
                   className=" resize-none w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                /> */}
+
+                <EditableMathField
+                  className="w-full bg-white resize-none px-3 py-2 border border-gray-300 rounded-md text-center focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  latex={latex}
+                  onChange={(mathField) => {
+                    setLatex(mathField.latex());
+                  }}
                 />
               </div>
 

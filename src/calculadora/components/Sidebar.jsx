@@ -6,7 +6,6 @@ import { LinkComponent } from "./LinkComponent";
 import { LoaderContext } from "./LoaderProvider";
 import { DocumentIcon } from "@heroicons/react/24/solid";
 
-
 export const SidebarGPTO = () => {
   const { isLoading } = useContext(LoaderContext);
 
@@ -29,7 +28,7 @@ export const SidebarGPTO = () => {
               </li>
             ))}
 
-            <li>
+            <li id="pdfGuide">
               <a
                 href="/report/GEPPETTO-MANUAL_DE_USUARIO.pdf"
                 target="_blank"
