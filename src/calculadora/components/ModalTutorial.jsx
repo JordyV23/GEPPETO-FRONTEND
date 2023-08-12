@@ -2,9 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { Button, Modal } from "flowbite-react";
 import { useTour } from "@reactour/tour";
+import { instructionsChecker } from "../../helpers";
 
 export const ModalTutorial = ({ info, booleanState, btnInstruction }) => {
-  const storedValue = localStorage.getItem("showGeppetoInstruccions");
+  const storedValue = instructionsChecker();
 
   if (storedValue === null) {
     localStorage.setItem("showGeppetoInstruccions", false);
@@ -48,14 +49,14 @@ export const ModalTutorial = ({ info, booleanState, btnInstruction }) => {
       onClose={() => props.setOpenModal(undefined)}
     >
       <Modal.Header className="dark:bg-dark-accent">Geppeto dice:</Modal.Header>
-      <Modal.Body className="dark:bg-dark-accent">
+      <Modal.Body className="dark:bg-dark-accent dark:text-white">
         {info.map((message, i) => (
           <p key={i}>{message}</p>
         ))}
       </Modal.Body>
       <Modal.Footer className="dark:bg-dark-accent">
         <Button
-          className="text-white bg-light-accent hover:bg-light-accent-2 dark:bg-dark-accent dark:hover:bg-dark-accent hvr-grow  "
+          className="text-white bg-light-accent hover:bg-light-accent-2 dark:bg-dark-accent dark:text-white dark:hover:bg-dark-accent hvr-grow  "
           color="gray"
           onClick={cancelTutorial}
         >
@@ -63,7 +64,7 @@ export const ModalTutorial = ({ info, booleanState, btnInstruction }) => {
         </Button>
 
         <Button
-          className="text-white bg-light-accent hover:bg-light-accent-2 dark:bg-dark-accent dark:hover:bg-dark-accent hvr-grow  "
+          className="text-white bg-light-accent hover:bg-light-accent-2 dark:bg-dark-accent dark:text-white dark:hover:bg-dark-accent hvr-grow  "
           color="gray"
           onClick={startTutorial}
         >

@@ -9,7 +9,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
 import { TourProvider } from "@reactour/tour";
-import { stepsModule2 } from "../../helpers/stepsModule2";
 import React, { useContext } from "react";
 export const SolverPage = () => {
   //***Hook para manejo de formulario***//
@@ -43,7 +42,7 @@ export const SolverPage = () => {
       return;
     }
     //Si no, muestra un toast
-    toast.warning("Revisa tu conversion :c");
+    toast.warning("Revisa tu expresion de numeros bien escritos... 🙈");
   };
 
   //Arreglo de imagenes con el paso a paso de este modulo
@@ -56,13 +55,13 @@ export const SolverPage = () => {
 
   return (
     <>
-      <TourProvider steps={stepsModule2} startAt={0}>
-        <ModalTutorial
+      {/* <TourProvider steps={stepsModule2} startAt={0}> */}
+        {/* <ModalTutorial
           info={["Continuemos con nuestro viaje!"]}
           booleanState={false}
           btnInstruction={"Continuemos"}
-        />
-        <div className="p-4 border-2 items-center w-full justify-center border-white border-dashed rounded-lg dark:border-white mt-20">
+        /> */}
+        <div id="SolverPage" className="p-4 border-2 items-center w-full justify-center border-white border-dashed rounded-lg dark:border-white mt-20">
           <div className="flex items-center justify-center h-68 mb-4 rounded ">
             <form onSubmit={handleSubmit(onSubmit)} className="flex-1">
               <div className="flex">
@@ -117,7 +116,7 @@ export const SolverPage = () => {
             </form>
           </div>
         </div>
-      </TourProvider>
+      {/* </TourProvider> */}
     </>
   );
 };
