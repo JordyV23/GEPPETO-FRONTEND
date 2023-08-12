@@ -19,7 +19,6 @@ export const ImageSlider = ({ imagenes, flagParam }) => {
     if (flagParam != flag) {
       setFlag(flagParam);
       setImages(imagenes);
-      console.log("Entra");
     }
   }, [flagParam]);
 
@@ -81,10 +80,10 @@ export const ImageSlider = ({ imagenes, flagParam }) => {
             key={currentImageIndex}
             src={images[currentImageIndex]}
             alt={`Imagen ${currentImageIndex + 1}`}
-            className="carousel-image animate__animated animate__zoomInUp"
+            className="carousel-image animate__animated animate__zoomIn"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            transition={{ ease: "easeOut", duration: 2 }}
             custom={currentImageIndex}
           />
         </AnimatePresence>
