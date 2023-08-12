@@ -6,8 +6,9 @@ export const Conceptos = [
         titulo:"¿Qué es un sistema de numeración?",
         concepto:"Un sistema de numeración es un conjunto de reglas y principios utilizados para representar correctamente los números," +
         " para realizar operaciones matemáticas. Existen varios sistemas de numeración utilizados en todo el planeta, pero los más comunes son el sistema " +
-        "decimal, el binario y el hexadecimal, el sistema que usamos diariamente es el decimmal es el que usualmente usamos para representar cantidades en la vida cotidiana.",
-        link:""
+        "decimal, el binario y el hexadecimal, el sistema que usamos diariamente es el decimmal es el que usualmente usamos para representar cantidades en"
+        +" la vida cotidiana. Entre estos principios podemos encontrar el principio de Orden, principio de la Base y principio Posicional.",
+        img:"/SistemaNum.png"
   },
     {
         id: "Concepto2",
