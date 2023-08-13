@@ -36,7 +36,7 @@ export const TeamCards = () => {
                 className="swiper_container"
             >
                     {integrantes.map(({ nombre, imagen }, i) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={i}>
                             {/*<div*/}
                             {/*    className="rounded-t-lg h-90 w-ful  bg-light-accent rounded-lg shadow  dark:bg-dark-accent dark:border-dark-accent p-3 "*/}
                             {/*    key={i}*/}
