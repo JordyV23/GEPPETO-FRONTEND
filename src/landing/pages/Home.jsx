@@ -42,7 +42,7 @@ export const Home = () => {
 
 
             <div className="mx-auto mb-6" id="team">
-                <h2  className=" font-semibold xl:text-4xl  sm:text-3xl dark:text-white mx-auto text-center mt-6 ">Equipo de trabajo</h2>
+                <h2  className=" font-semibold xl:text-4xl  sm:text-3xl dark:text-white mx-auto text-center mt-16 ">Equipo de trabajo</h2>
               <div className="flex flex-col items-center md:space-x-reverse space-y-1  flex-wrap  md:flex-row mt-14  justify-evenly ">
                 <TeamCards />
               </div>
