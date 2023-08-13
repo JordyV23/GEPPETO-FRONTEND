@@ -9,7 +9,7 @@ export const ChatComponent = () => {
   /**
    * Carga del provider y el contexto
    */
-  const { messages, isLoading } = useContext(MessageContext);
+  const { messages, loading } = useContext(MessageContext);
   
   /**
    * Carga del tema que se esta utilizando
@@ -66,7 +66,7 @@ export const ChatComponent = () => {
           ariaLabel="three-dots-loading"
           wrapperStyle={{}}
           wrapperClassName=""
-          visible={isLoading()}
+          visible={loading}
         />
       </div>
     </>
