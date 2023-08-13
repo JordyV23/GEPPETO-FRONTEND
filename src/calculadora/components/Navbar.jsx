@@ -40,7 +40,7 @@ export const NavbarGPTO = () => {
                 href="/gpto/home"
                 className="flex ml-2 md:mr-24 animate__animated animate__fadeIn "
               >
-                <img src="/logo-gpto2.svg" className="h-8 mr-3" alt="GPPETTO Logo" />
+                <img src="/img/logos/svg/logo-gpto2.svg" className="h-8 mr-3" alt="GPPETTO Logo" />
                 <span className="animate__animated animate__fadeIn  self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white">
                   GEPPETTO
                 </span>

@@ -4,6 +4,7 @@ export const Conceptos = [
   {
         id: "Concepto1",
         titulo:"¿Qué es un sistema de numeración?",
+        img:"/img/accordion/png/SistemaNum.png",
         concepto:"Un sistema de numeración es un conjunto de reglas y principios utilizados para representar correctamente los números," +
         " para realizar operaciones matemáticas. Existen varios sistemas de numeración utilizados en todo el planeta, pero los más comunes son el sistema " +
         "decimal, el binario y el hexadecimal, el sistema que usamos diariamente es el decimmal es el que usualmente usamos para representar cantidades en la vida cotidiana.",
@@ -23,7 +24,7 @@ export const Conceptos = [
     {
         id: "Concepto3",
         titulo:"Principio de la Base",
-        img:"/BASE2.png",
+        img:"/img/accordion/png/BASE2.png",
         concepto:"La base de un sistema de numeración se refiere a cuantas cifras"+
         " pueden usarse en el sistema, ya que cada sistema de numeración tiene una base específica que determina su rango de valores. "+
         "Por ejemplo, en el Sistema decimal, que tiene una base 10, se utilizan diez símbolos: 0, 1, 2, 3, 4, 5, 6, 7, 8 y 9. En otros "+
@@ -37,7 +38,7 @@ export const Conceptos = [
     {
         id: "Concepto4",
         titulo: "Principio Posicional",
-        img: '/posicional.png',
+        img: '/img/accordion/png/posicional.png',
         concepto: "En un numeral toda cifra tiene un “valor posicional”, este principio" +
             " es una extensión del principio de la base y establece que el valor de un dígito en un número depende de su posición en relación con" +
             " otros dígitos en la secuencia. En los sistemas de numeración posicionales, el valor de un dígito se multiplica por una potencia de" +

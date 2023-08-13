@@ -47,10 +47,10 @@ export const SolverPage = () => {
 
   //Arreglo de imagenes con el paso a paso de este modulo
   const imagenes = [
-    "/guides/mod2/1.png",
-    "/guides/mod2/2.png",
-    "/guides/mod2/3.png",
-    "/guides/mod2/4.png",
+    "/img/guides/mod2/1.png",
+    "/img/guides/mod2/2.png",
+    "/img/guides/mod2/3.png",
+    "/img/guides/mod2/4.png",
   ];
 
   return (
