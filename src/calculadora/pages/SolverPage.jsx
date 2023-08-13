@@ -72,7 +72,7 @@ export const SolverPage = () => {
                   htmlFor="expresion"
                   className="block text-sm font-medium dark:text-white"
                 >
-                  Expreison Numerica:
+                  Expresiones Numerica:
                 </label>
 
                 {/* Input para la expresion a convertir */}

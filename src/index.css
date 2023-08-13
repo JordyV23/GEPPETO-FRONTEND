@@ -3,32 +3,32 @@
 @tailwind utilities;
 
 body * {
-    @apply transition-colors duration-200;
+  @apply transition-colors duration-200;
 }
 
 #footer {
-    color: white !important;
+  color: white !important;
 }
 
 /* Firefox */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: #faca15;
+  scrollbar-width: thin;
+  scrollbar-color: #faca15;
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 *::-webkit-scrollbar-track {
-    background: #FFF;
-    border-radius: 5px;
+  background: #FFF;
+  border-radius: 5px;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #faca15;
-    border-radius: 14px;
-    border: 2px solid #faca15;
+  background-color: #faca15;
+  border-radius: 14px;
+  border: 2px solid #faca15;
 }
 
