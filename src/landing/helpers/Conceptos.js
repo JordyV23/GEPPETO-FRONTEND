@@ -9,7 +9,6 @@ export const Conceptos = [
         " para realizar operaciones matemáticas. Existen varios sistemas de numeración utilizados en todo el planeta, pero los más comunes son el sistema " +
         "decimal, el binario y el hexadecimal, el sistema que usamos diariamente es el decimmal es el que usualmente usamos para representar cantidades en"
         +" la vida cotidiana. Entre estos principios podemos encontrar el principio de Orden, principio de la Base y principio Posicional.",
-        img:"/SistemaNum.png"
   },
     {
         id: "Concepto2",

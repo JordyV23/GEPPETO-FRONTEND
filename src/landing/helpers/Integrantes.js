@@ -1,5 +1,5 @@
 export const integrantes = [
-    {nombre:"Zaylin Chaves Pérez",imagen:"/img/team/luis.jpeg"},
+    {nombre:"Zaylin Chaves Pérez",imagen:"/img/team/zaylin.jpeg"},
     {nombre:"Luis Fernando Salguero Guzmán",imagen:"/img/team/luis.jpeg"},
     {nombre:"Fabricio Mora Quiros",imagen:"/img/team/luis.jpeg"},
     {nombre:"Jordy Hernández Vargas",imagen:"/img/team/jordy.jpeg"},

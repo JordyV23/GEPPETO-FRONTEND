@@ -2,7 +2,7 @@ import React from "react";
 import { integrantes } from "../helpers";
 
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, EffectCoverflow } from 'swiper/modules';
+import { Navigation, Pagination, A11y, EffectCoverflow} from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -32,7 +32,7 @@ export const TeamCards = () => {
                     prevEl: '.swiper-button-prev',
                     clickable: true,
                 }}
-                modules={[EffectCoverflow, Pagination, Navigation]}
+                modules={[EffectCoverflow, Pagination, Navigation,A11y ]}
                 className="swiper_container"
             >
                     {integrantes.map(({ nombre, imagen }, i) => (
