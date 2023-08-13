@@ -33,11 +33,11 @@ export const Home = () => {
 
           <div className="mx-6 sm:my-20" data-aos="fade-up" >
             <div className="mx-auto mb-6" id="funciones">
-              <h5 className="font-semibold sm:text-2xl dark:text-white mx-auto text-center mb-6 ">
+              <h2 className="font-semibold  xl:text-4xl  sm:text-3xl dark:text-white mx-auto text-center mb-6 ">
                 Nuestro programa consta de tres funciones que te permitirán
                 llevar tus cálculos al siguiente nivel:
-              </h5>
-              <div className="flex flex-col items-center md:space-x-reverse space-y-1   flex-wrap  md:flex-row  justify-evenly " data-aos="fade-right">
+              </h2>
+              <div className="flex flex-col items-center md:space-x-reverse space-y-1   flex-wrap  md:flex-row  justify-evenly ">
                 <CardLanding />
               </div>
             </div>
@@ -46,19 +46,19 @@ export const Home = () => {
               <AccordionLanding />
             </div>
 
+
             <div className="mx-auto mb-6" id="team" data-aos="fade-up">
-              <h1 className=" font-bold xl:text-5xl md:text-4xl sm:text-4xl dark:text-white mx-auto text-center mt-28 ">
-                Equipo de trabajo
-              </h1>
+                <h2  className=" font-semibold xl:text-4xl  sm:text-3xl dark:text-white mx-auto text-center mt-16 ">Equipo de trabajo</h2>
               <div className="flex flex-col items-center md:space-x-reverse space-y-1  flex-wrap  md:flex-row mt-14  justify-evenly ">
                 <TeamCards />
               </div>
             </div>
 
+
             <div className="mx-auto mb-6" data-aos="fade-up">
-              <h5 className=" font-semibold sm:text-2xl dark:text-white mx-auto text-center mt-6 ">
+              <h2 className=" font-semibold  xl:text-4xl  sm:text-3xl dark:text-white mx-auto text-center mt-6 ">
                 ¡Pruébalo ahora y simplifica tus cálculos!
-              </h5>
+              </h2>
               <p className="p-2  rounded-lg text:sm dark:text-white mt-3 text-center">
                 En Geppeto la precisión y la eficiencia son nuestros pilares.
                 Nuestro equipo de desarrolladores ha trabajado mucho para
