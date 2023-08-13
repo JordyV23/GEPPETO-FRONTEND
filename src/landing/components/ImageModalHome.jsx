@@ -17,9 +17,9 @@ export const ImageModalHome = ({content}) => {
             <button
                 type="button"
                 onClick={() => onClickEvent()}
-                className=" bg-light-accent hover:bg-light-accent-dark focus:ring-2 focus:bg-light-accent-dark font-medium rounded-lg text-sm px-3 py-2 mr-2 mb-2 dark:bg-main-dark dark:hover:bg-blue-400 focus:outline-none dark:focus:ring-blue-800"
+                className=" bg-main-light hover:bg-light-accent-2 focus:ring-2 focus:bg-light-accent-dark font-medium rounded-lg text-sm px-3 py-2 mr-2 mb-2 dark:bg-main-dark dark:hover:bg-blue-400 focus:outline-none dark:focus:ring-blue-800"
             >
-                <i className="fa-solid fa-eye"></i>
+                <i className="fa-solid fa-eye text-light-accent dark:text-dark-accent"></i>
             </button>
 
                 <Modal

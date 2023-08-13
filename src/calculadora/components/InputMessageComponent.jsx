@@ -13,7 +13,7 @@ import { ImageModal } from "./ImageModal";
  * @returns {JSX.Element} El componente InputMessageComponent para ingresar y enviar mensajes en el chat.
  */
 export const InputMessageComponent = () => {
-  const { addMessage, setLoading } = useContext(MessageContext);
+  const { addMessage, setLoading, loading } = useContext(MessageContext);
   const [message, setMessage] = useState("");
 
   /**
@@ -26,12 +26,10 @@ export const InputMessageComponent = () => {
   };
 
   const imagenes = [
-    "/guides/mod2/1.png",
-    "/guides/mod2/2.png",
-    "/guides/mod2/3.png",
-    "/guides/mod2/4.png",
+    "/guides/mod3/1.png",
+    "/guides/mod3/2.png",
+    "/guides/mod3/3.png",
   ];
-
 
   /**
    * Envía el mensaje y obtiene la respuesta de la IA.
@@ -50,24 +48,27 @@ export const InputMessageComponent = () => {
       setMessage("");
 
       try {
-        alert("API COMENTADA");
-        //Realiza la consulta a la API
-        // const { data: datos } = await axios.post(
-        //   `${import.meta.env.VITE_APIURL}problemasAI/`,
-        //   {
-        //     prompt: message,
-        //   }
-        // );
+        // Realiza la consulta a la API
+        const { data: datos } = await axios.post(
+          `${import.meta.env.VITE_APIURL}problemasAI/`,
+          {
+            prompt: message,
+          }
+        );
 
-        //Verifica el status de la respuesta de la API
-        // if (datos.Status === "true") {
-        //   addMessage("GEPPETTO", datos.Respuesta);
-        // } else {
-        //   //Si el estado es falso, muestra una notificacion de error
-        //   toast.warning(
-        //     "Uy, a nuestra IA se le olvidó cómo resolver este problema 🙈"
-        //   );
-        // }
+        // Verifica el status de la respuesta de la API
+        if (datos.Status === "true") {
+          if ((datos.Respuesta === "")) {
+            addMessage("GEPPETTO", "Lo siento, desconozco la respuesta🙃🫤");
+          } else {
+            addMessage("GEPPETTO", datos.Respuesta);
+          }
+        } else {
+          //Si el estado es falso, muestra una notificacion de error
+          toast.warning(
+            "Uy, a nuestra IA se le olvidó cómo resolver este problema 🙈"
+          );
+        }
       } catch (error) {
         //Si ocurre un error, imprime por consola el error y muestra una notificacion
         console.error("Error al enviar el mensaje:", error);
@@ -89,10 +90,10 @@ export const InputMessageComponent = () => {
       <div className="flex flex-row items-center h-16 rounded-xl w-full px-4">
         <div className="flex-grow ml-4">
           <div className="relative w-full">
-          
             <input
               id="inputMessage"
               type="text"
+              disabled={loading}
               value={message}
               onChange={updateValue}
               onKeyDown={(e) => e.key === "Enter" && onSendMessage()}
@@ -104,10 +105,11 @@ export const InputMessageComponent = () => {
         <div className="ml-4">
           <button
             id="sendBtn"
+            disabled={loading}
             onClick={onSendMessage}
             className="flex items-center justify-center bg-light-accent hover:bg-light-accent-2 dark:bg-dark-accent dark:hover:bg-dark-accent-dark rounded-xl text-white px-4 py-1 flex-shrink-0"
           >
-            <span>Send</span>
+            <span>Enviar</span>
             <span className="ml-2">
               <PaperAirplaneIcon className="w-4 h-4 transform -rotate-45 -mt-px" />
             </span>
