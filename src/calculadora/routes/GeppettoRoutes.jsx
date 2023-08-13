@@ -2,13 +2,14 @@ import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { ConversionPage, ProblemsPage, SolverPage } from "../pages";
 import { GPTOLayout } from "../Layouts/GPTOLayout";
 import { TourProvider } from "@reactour/tour";
-import { LoaderProvider, Loader } from "../components";
+import { LoaderProvider, Loader, ChatProvider } from "../components";
 import { useState } from "react";
 
 export const GeppettoRoutes = () => {
   return (
     <LoaderProvider>
-      {/* <TourProvider
+      <ChatProvider>
+        {/* <TourProvider
         steps={steps}
         startAt={0}
       > */}
@@ -21,7 +22,8 @@ export const GeppettoRoutes = () => {
             <Route path="/*" element={<Navigate to="convert" />} />
           </Routes>
         </GPTOLayout>
-      {/* </TourProvider> */}
+        {/* </TourProvider> */}
+      </ChatProvider>
     </LoaderProvider>
   );
 };
