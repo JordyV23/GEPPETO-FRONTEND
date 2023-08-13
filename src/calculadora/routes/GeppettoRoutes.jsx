@@ -7,7 +7,6 @@ import { ChatProvider, LoaderProvider } from "../providers";
 export const GeppettoRoutes = () => {
   return (
     <LoaderProvider>
-      <ChatProvider>
         <GPTOLayout>
           <Loader />
           <Routes>
@@ -17,7 +16,6 @@ export const GeppettoRoutes = () => {
             <Route path="/*" element={<Navigate to="convert" />} />
           </Routes>
         </GPTOLayout>
-      </ChatProvider>
     </LoaderProvider>
   );
 };

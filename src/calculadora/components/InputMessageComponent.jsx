@@ -5,6 +5,8 @@ import { MessageContext } from "../providers";
 import { useContext } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { ModalTutorial } from "./ModalTutorial";
+import { ImageModal } from "./ImageModal";
 
 /**
  * Componente para ingresar y enviar mensajes en el chat.
@@ -23,6 +25,14 @@ export const InputMessageComponent = () => {
     setMessage(event.target.value);
   };
 
+  const imagenes = [
+    "/guides/mod2/1.png",
+    "/guides/mod2/2.png",
+    "/guides/mod2/3.png",
+    "/guides/mod2/4.png",
+  ];
+
+
   /**
    * Envía el mensaje y obtiene la respuesta de la IA.
    * @returns {Promise<void>} Una promesa que se resuelve después de enviar el mensaje y obtener la respuesta de la IA.
@@ -40,23 +50,24 @@ export const InputMessageComponent = () => {
       setMessage("");
 
       try {
+        alert("API COMENTADA");
         //Realiza la consulta a la API
-        const { data: datos } = await axios.post(
-          `${import.meta.env.VITE_APIURL}problemasAI/`,
-          {
-            prompt: message,
-          }
-        );
+        // const { data: datos } = await axios.post(
+        //   `${import.meta.env.VITE_APIURL}problemasAI/`,
+        //   {
+        //     prompt: message,
+        //   }
+        // );
 
         //Verifica el status de la respuesta de la API
-        if (datos.Status === "true") {
-          addMessage("GEPPETTO", datos.Respuesta);
-        } else {
-          //Si el estado es falso, muestra una notificacion de error
-          toast.warning(
-            "Uy, a nuestra IA se le olvidó cómo resolver este problema 🙈"
-          );
-        }
+        // if (datos.Status === "true") {
+        //   addMessage("GEPPETTO", datos.Respuesta);
+        // } else {
+        //   //Si el estado es falso, muestra una notificacion de error
+        //   toast.warning(
+        //     "Uy, a nuestra IA se le olvidó cómo resolver este problema 🙈"
+        //   );
+        // }
       } catch (error) {
         //Si ocurre un error, imprime por consola el error y muestra una notificacion
         console.error("Error al enviar el mensaje:", error);
@@ -78,6 +89,7 @@ export const InputMessageComponent = () => {
       <div className="flex flex-row items-center h-16 rounded-xl w-full px-4">
         <div className="flex-grow ml-4">
           <div className="relative w-full">
+          
             <input
               id="inputMessage"
               type="text"
@@ -101,6 +113,8 @@ export const InputMessageComponent = () => {
             </span>
           </button>
         </div>
+
+        <ImageModal imagenes={imagenes} />
       </div>
     </>
   );
