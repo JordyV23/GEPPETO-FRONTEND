@@ -16,7 +16,7 @@ export const NavbarLanding = () => {
         <img
           alt="GeppetoLogo"
           className="mr-3 h-6 sm:h-9"
-          src="/logo-gpto2.svg"
+          src="/img/logos/svg/logo-gpto2.svg"
         />
         <span className=" self-center wor whitespace-nowrap font-bold">GEPPETTO</span>
       </Navbar.Brand>
@@ -41,6 +41,7 @@ export const NavbarLanding = () => {
         {/*<Navbar.Link className='text-txt-light font-bold text-base' href="/gpto/sistemaNumerico">Sistema de Numeración</Navbar.Link>*/}
         <Navbar.Link className='text-txt-light font-bold text-base' href="#conceptos">Sistema de Numeración</Navbar.Link>
         <Navbar.Link className='text-txt-light font-bold text-base' href="#funciones">Funciones</Navbar.Link>
+        <Navbar.Link className='text-txt-light font-bold text-base' href="#team">Equipo</Navbar.Link>
 
 
       </Navbar.Collapse>

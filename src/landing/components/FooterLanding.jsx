@@ -18,7 +18,7 @@ export const FooterLanding = () => {
                 <div className="flex items-center justify-center w-28 h-28 rounded-full">
                   {/* className="flex-shrink-0 w-5 h-5 rounded-full dark:text-gray-900" */}
                   <img
-                    src="/logo-utn.svg"
+                    src="/img/logos/svg/logo-utn.svg"
                     className="flex-shrink-0 w-max h-max dark:text-gray-900"
                   />
                 </div>
