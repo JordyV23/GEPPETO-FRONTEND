@@ -78,6 +78,10 @@ export const steps = [
     content: "Una vez que GEPPETTO haya pensado en una respuesta, verás aqui la respuesta"
   },
   {
+    selector:"#info-btn",
+    content: "Y al igual que en las paginas anteriores, aqui podras encontrar una guia rapida acerca del uso de este"
+  },
+  {
     selector: "#ProblemsPage",
     content: "Y hemos llegado al final del recorrido!, espero que no haya sido muy pesado...  ¡Ahora ve a resolver tus preguntas con GEPPETTO! No seas tímido, muchos éxitos🫡"
   },
