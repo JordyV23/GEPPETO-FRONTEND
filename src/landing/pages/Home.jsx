@@ -3,15 +3,21 @@ import { FooterLanding } from "../components/FooterLanding";
 import { CardLanding } from "../components/Card";
 import { Jumbotron } from "../components/Jumbotron";
 import { AccordionLanding } from "../components/Acordion";
-import { TeamCards} from "../components/TeamCards.jsx";
+import { TeamCards } from "../components/TeamCards.jsx";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export const Home = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <div className=" bg-main-light dark:bg-main-dark  ">
         <NavbarLanding />
 
-        <div className="md:mx-14 ">
+        <div className="md:mx-14 " data-aos="fade-up">
           <Jumbotron
             img={"/img/jumbotron/png/math.png"}
             text={
@@ -25,7 +31,7 @@ export const Home = () => {
             }
           />
 
-          <div className="mx-6 sm:my-20" >
+          <div className="mx-6 sm:my-20" data-aos="fade-up" >
             <div className="mx-auto mb-6" id="funciones">
               <h2 className="font-semibold  xl:text-4xl  sm:text-3xl dark:text-white mx-auto text-center mb-6 ">
                 Nuestro programa consta de tres funciones que te permitirán
@@ -36,12 +42,12 @@ export const Home = () => {
               </div>
             </div>
 
-            <div id="conceptos">
+            <div id="conceptos" data-aos="fade-up">
               <AccordionLanding />
             </div>
 
 
-            <div className="mx-auto mb-6" id="team">
+            <div className="mx-auto mb-6" id="team" data-aos="fade-up">
                 <h2  className=" font-semibold xl:text-4xl  sm:text-3xl dark:text-white mx-auto text-center mt-16 ">Equipo de trabajo</h2>
               <div className="flex flex-col items-center md:space-x-reverse space-y-1  flex-wrap  md:flex-row mt-14  justify-evenly ">
                 <TeamCards />
@@ -49,7 +55,7 @@ export const Home = () => {
             </div>
 
 
-            <div className="mx-auto mb-6">
+            <div className="mx-auto mb-6" data-aos="fade-up">
               <h2 className=" font-semibold  xl:text-4xl  sm:text-3xl dark:text-white mx-auto text-center mt-6 ">
                 ¡Pruébalo ahora y simplifica tus cálculos!
               </h2>
@@ -61,10 +67,7 @@ export const Home = () => {
                 cálculos y problemas numéricos de manera fácil!
               </p>
             </div>
-
           </div>
-
-
         </div>
 
         <FooterLanding />
