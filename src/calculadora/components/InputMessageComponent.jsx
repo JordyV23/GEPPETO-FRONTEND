@@ -11,7 +11,7 @@ import axios from "axios";
  * @returns {JSX.Element} El componente InputMessageComponent para ingresar y enviar mensajes en el chat.
  */
 export const InputMessageComponent = () => {
-  const { addMessage, changeLoading } = useContext(MessageContext);
+  const { addMessage, setLoading } = useContext(MessageContext);
   const [message, setMessage] = useState("");
 
   /**
@@ -31,7 +31,7 @@ export const InputMessageComponent = () => {
     //Valida que el mensaje no este vacio
     if (message !== "") {
       //Cambia el estado de carga del provider de mensajes
-      changeLoading(true);
+      setLoading(true);
 
       //Agrega el mensaje del usuario al arreglo de mensajes en el provider
       addMessage("user", message);
@@ -64,7 +64,7 @@ export const InputMessageComponent = () => {
           "Lo siento, algo salió mal, ¿por qué no lo intentas de nuevo? 🙁"
         );
       }
-      changeLoading(false);
+      setLoading(false);
     } else {
       //Si esta vacio, notifica el error
       toast.warning(

@@ -58,35 +58,18 @@ const ChatProvider = ({ children }) => {
   };
 
   /**
-   * Cambia el estado de carga en el componente ChatProvider.
-   * @param {boolean} value - El nuevo valor del estado de carga.
-   * @returns {void}
-   */
-  const changeLoading = (value) => {
-    setLoading(value);
-  };
-
-  /**
-   * Verifica si el componente está en estado de carga.
-   * @returns {boolean} `true` si el componente está en estado de carga, `false` si no.
-   */
-  const isLoading = () => {
-    return loading;
-  };
-
-  /**
    * Objeto de valor que contiene funciones y datos relevantes para el contexto del chat.
    * @type {Object}
    * @property {Message[]} messages - Los mensajes almacenados en el chat.
    * @property {Function} addMessage - Función para agregar un nuevo mensaje al chat.
-   * @property {Function} isLoading - Función para verificar el estado de carga del componente.
-   * @property {Function} changeLoading - Función para cambiar el estado de carga del componente.
+   * @property {Function} loading - Función para verificar el estado de carga del componente.
+   * @property {Function} setLoading - Función para cambiar el estado de carga del componente.
    */
   const value = {
     messages,
     addMessage,
-    isLoading,
-    changeLoading,
+    loading,
+    setLoading,
   };
 
   return (
