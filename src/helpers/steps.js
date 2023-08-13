@@ -60,4 +60,29 @@ export const steps = [
     selector: "#info-btn",
     content: "¡Al igual que en la página anterior, siempre que quieras repasar la información de uso, puedes volver aquí a revisarla!",
   },
+  //Modulo 3
+  {
+    selector: "#ProblemsPage",
+    content: "Y esta es la pagina para resolver problemas apoyado de GEPPETTO!"
+  },
+  {
+    selector: "#inputMessage",
+    content: "Este es input en donde podras enviar tus preguntas a GEPPPETTO, debes de presionar la tecla enter para enviar el mensaje"
+  },
+  {
+    selector: "#sendBtn",
+    content: "O si lo prefieres, de igual manera puedes presionar el botón para enviar el mensaje"
+  },
+  {
+    selector:"#chatArea",
+    content: "Una vez que GEPPETTO haya pensado en una respuesta, verás aqui la respuesta"
+  },
+  {
+    selector:"#info-btn",
+    content: "Y al igual que en las paginas anteriores, aqui podras encontrar una guia rapida acerca del uso de este"
+  },
+  {
+    selector: "#ProblemsPage",
+    content: "Y hemos llegado al final del recorrido!, espero que no haya sido muy pesado...  ¡Ahora ve a resolver tus preguntas con GEPPETTO! No seas tímido, muchos éxitos🫡"
+  },
 ]

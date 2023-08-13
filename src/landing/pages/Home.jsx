@@ -3,6 +3,7 @@ import { FooterLanding } from "../components/FooterLanding";
 import { CardLanding } from "../components/Card";
 import { Jumbotron } from "../components/Jumbotron";
 import { AccordionLanding } from "../components/Acordion";
+import { TeamCards} from "../components/TeamCards.jsx";
 
 export const Home = () => {
   return (
@@ -12,7 +13,7 @@ export const Home = () => {
 
         <div className="md:mx-14 ">
           <Jumbotron
-            img={"/math.png"}
+            img={"/img/jumbotron/png/math.png"}
             text={
               "Geppeto es una herramienta diseñada para hacer que tus cálculos numéricos sean más fáciles, precisos y eficientes." +
               " Nuestro programa consta de tres módulos potentes que te proporcionarán un conjunto de capacidades matemáticas para enfrentar " +
@@ -24,21 +25,29 @@ export const Home = () => {
             }
           />
 
-          <div className="mx-6 sm:my-20 ">
+          <div className="mx-6 sm:my-20" >
             <div className="mx-auto mb-6" id="funciones">
-              <h5 className="  font-semibold sm:text-2xl dark:text-white mx-auto text-center mb-6 ">
+              <h5 className="font-semibold sm:text-2xl dark:text-white mx-auto text-center mb-6 ">
                 Nuestro programa consta de tres funciones que te permitirán
                 llevar tus cálculos al siguiente nivel:
               </h5>
-            </div>
-
-            <div className="flex flex-col items-center md:space-x-reverse space-y-1   flex-wrap  md:flex-row  justify-evenly ">
-              <CardLanding />
+              <div className="flex flex-col items-center md:space-x-reverse space-y-1   flex-wrap  md:flex-row  justify-evenly ">
+                <CardLanding />
+              </div>
             </div>
 
             <div id="conceptos">
               <AccordionLanding />
             </div>
+
+
+            <div className="mx-auto mb-6" id="team">
+                <h1  className=" font-bold xl:text-5xl md:text-4xl sm:text-4xl dark:text-white mx-auto text-center mt-28 ">Equipo de trabajo</h1>
+              <div className="flex flex-col items-center md:space-x-reverse space-y-1  flex-wrap  md:flex-row mt-14  justify-evenly ">
+                <TeamCards />
+              </div>
+            </div>
+
 
             <div className="mx-auto mb-6">
               <h5 className=" font-semibold sm:text-2xl dark:text-white mx-auto text-center mt-6 ">
@@ -52,7 +61,10 @@ export const Home = () => {
                 cálculos y problemas numéricos de manera fácil!
               </p>
             </div>
+
           </div>
+
+
         </div>
 
         <FooterLanding />

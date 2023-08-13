@@ -3,8 +3,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
 import {
   ImageModal,
-  ModalTutorial,
-  LoaderContext
+  ModalTutorial
 } from "../components";
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
@@ -13,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
 import React, { useContext } from 'react';
+import { LoaderContext } from "../providers";
 
 
 //****Inicializa arreglo con valor para select de bases****//
@@ -61,11 +61,11 @@ export const ConversionPage = () => {
 
   //Arreglo de imagenes con el paso a paso de este modulo
   const imagenes = [
-    "/guides/mod1/1.png",
-    "/guides/mod1/2.png",
-    "/guides/mod1/3.png",
-    "/guides/mod1/4.png",
-    "/guides/mod1/5.png",
+    "/img/guides/mod1/1.png",
+    "/img/guides/mod1/2.png",
+    "/img/guides/mod1/3.png",
+    "/img/guides/mod1/4.png",
+    "/img/guides/mod1/5.png",
   ];
 
   return (
