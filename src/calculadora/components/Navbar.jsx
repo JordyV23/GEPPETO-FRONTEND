@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 import { ThemeSwitch } from "../../components";
-import { LoaderContext } from "./LoaderProvider";
+import { LoaderContext } from "../providers";
 
 export const NavbarGPTO = () => {
 

@@ -6,12 +6,18 @@ import { InformationCircleIcon } from "@heroicons/react/24/solid";
 import { ImageSlider } from "./ImageSlider";
 
 export const ImageModal = ({ imagenes }) => {
+  //Hook para manejo del estado del modal
   const [openModal, setOpenModal] = useState("");
 
+  //Funcion de bandera para indicar hay que actualizar las imagenes del modal
   const [flag, setFlag] = useState(1);
 
+  //Propiedad para cambiar estados del modal
   const props = { openModal, setOpenModal };
   
+  /**
+   * Funcion disparada al hacer click en el icono del modal para abrir el modal
+   */
   const onClickEvent = () => {
     props.setOpenModal("default")
     setFlag(flag+1)

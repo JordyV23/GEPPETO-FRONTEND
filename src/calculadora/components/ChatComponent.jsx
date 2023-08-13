@@ -1,7 +1,7 @@
 import React from "react";
 import { MessageComponent } from "./MessageComponent";
-import { useEffect, useRef, useState } from "react";
-import { MessageContext } from "./ChatProvider";
+import { useEffect } from "react";
+import { MessageContext } from "../providers";
 import { useContext } from "react";
 import { ThreeDots } from "react-loader-spinner";
 

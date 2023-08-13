@@ -1,7 +1,7 @@
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { useState } from "react";
-import { MessageContext } from "./ChatProvider";
+import { MessageContext } from "../providers";
 import { useContext } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";

@@ -1,7 +1,5 @@
 import React from "react";
-import { useContext } from "react";
 import TypewriterComponent from "typewriter-effect";
-import { MessageContext } from "./ChatProvider";
 
 /**
  * Componente para mostrar un mensaje en el chat.
