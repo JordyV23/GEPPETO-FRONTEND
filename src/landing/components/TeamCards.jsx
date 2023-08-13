@@ -47,7 +47,7 @@ export const TeamCards = () => {
                                         alt={nombre}
                                     />
                                 <div className="sm:p-5 text-[1.1rem]">
-                                    <p className="font-normal dark:text-white text-black text-center ">
+                                    <p className="font-normal  dark:text-white text-black text-center ">
                                         {nombre}
                                     </p>
                                 </div>
