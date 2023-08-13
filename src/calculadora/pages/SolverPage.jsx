@@ -51,10 +51,10 @@ export const SolverPage = () => {
 
   //Arreglo de imagenes con el paso a paso de este modulo
   const imagenes = [
-    "/guides/mod2/1.png",
-    "/guides/mod2/2.png",
-    "/guides/mod2/3.png",
-    "/guides/mod2/4.png",
+    "/img/guides/mod2/1.png",
+    "/img/guides/mod2/2.png",
+    "/img/guides/mod2/3.png",
+    "/img/guides/mod2/4.png",
   ];
 
   return (
@@ -72,7 +72,7 @@ export const SolverPage = () => {
                   htmlFor="expresion"
                   className="block text-sm font-medium dark:text-white"
                 >
-                  Expreison Numerica:
+                  Expresiones Numerica:
                 </label>
 
                 {/* Input para la expresion a convertir */}
