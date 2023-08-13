@@ -23,6 +23,12 @@ export const GPTOLayout = ({ children }) => {
       case 10:
         redirect("/geppetto/solver", true);
         break;
+      case 15:
+        redirect("/geppetto/problemsolver", true);
+        break;
+      case 19:
+        localStorage.setItem("showGeppetoInstruccions", true);
+        break;
       default:
         break;
     }
@@ -36,7 +42,7 @@ export const GPTOLayout = ({ children }) => {
         startAt={0}
         currentStep={step}
         setCurrentStep={setCurrentStep}
-        disableKeyboardNavigation={['left']}
+        disableKeyboardNavigation={["left"]}
         showPrevNextButtons={false}
       >
         {/* <Navbar /> */}
