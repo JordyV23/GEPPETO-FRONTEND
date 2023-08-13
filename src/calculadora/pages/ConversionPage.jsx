@@ -3,8 +3,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
 import {
   ImageModal,
-  ModalTutorial,
-  LoaderContext
+  ModalTutorial
 } from "../components";
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
@@ -13,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "animate.css";
 import "hover.css";
 import React, { useContext } from 'react';
+import { LoaderContext } from "../providers";
 
 
 //****Inicializa arreglo con valor para select de bases****//

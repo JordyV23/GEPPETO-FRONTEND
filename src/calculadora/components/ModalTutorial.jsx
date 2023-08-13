@@ -5,12 +5,16 @@ import { useTour } from "@reactour/tour";
 import { instructionsChecker } from "../../helpers";
 
 export const ModalTutorial = ({ info, booleanState, btnInstruction }) => {
+
+  //Obtiene el estado para mostrar las intrucciones en el local storage
   const storedValue = instructionsChecker();
 
+  //Valida si no tiene un valor
   if (storedValue === null) {
     localStorage.setItem("showGeppetoInstruccions", false);
   }
 
+  //Estado para gestionar la apertura del modal de las intrucciones
   const [openModal, setOpenModal] = useState(
     storedValue != "false" ? undefined : "default"
   );
