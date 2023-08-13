@@ -1,7 +1,7 @@
 import { ThreeCircles } from "react-loader-spinner";
 import "animate.css";
 import React, { useContext } from 'react';
-import { LoaderContext } from './LoaderProvider';
+import { LoaderContext } from '../providers';
 export const Loader = () => {
   const storedTtheme = localStorage.getItem("geppeto-theme");
   const { isLoading } = useContext(LoaderContext);

@@ -3,7 +3,7 @@
 import { useContext } from "react";
 import { linkMenu } from "../helpers";
 import { LinkComponent } from "./LinkComponent";
-import { LoaderContext } from "./LoaderProvider";
+import { LoaderContext } from "../providers";
 import { DocumentIcon } from "@heroicons/react/24/solid";
 
 export const SidebarGPTO = () => {

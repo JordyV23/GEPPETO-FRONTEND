@@ -21,15 +21,17 @@ export const ImageModalHome = ({content}) => {
             >
                 <i className="fa-solid fa-eye"></i>
             </button>
+
                 <Modal
                     dismissible
                     show={props.openModal === "default"}
                     onClose={() => props.setOpenModal(undefined)}
                 >
+                    <Modal.Header className="dark:bg-dark-accent p-3"></Modal.Header>
                     <Modal.Body className="p-3 transition-transform">
                         <div className="transition-opacity duration-500 opacity-100 hover:opacity-90">
                             {/* Apply the transition-opacity class */}
-                            {content.img && <img className="p-0" src={content.img} />}
+                            {content.img && <img className="p-0 mx-auto" src={content.img} />}
                         </div>
                         <div className="transition-opacity duration-500 opacity-100 hover:opacity-90">
                             {/* Apply the transition-opacity class */}
