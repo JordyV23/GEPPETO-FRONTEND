@@ -3,7 +3,13 @@ import { useContext } from "react";
 import TypewriterComponent from "typewriter-effect";
 import { MessageContext } from "./ChatProvider";
 
-//{ alignment,message }
+/**
+ * Componente para mostrar un mensaje en el chat.
+ * @param {Object} props - Propiedades del componente.
+ * @param {string[]} props.alignment - Configuración de alineación y estilos del mensaje.
+ * @param {string} props.message - Contenido del mensaje a mostrar.
+ * @returns {JSX.Element} El componente MessageComponent que muestra un mensaje en el chat.
+ */
 export const MessageComponent = ({ alignment, message }) => {
   return (
     <>

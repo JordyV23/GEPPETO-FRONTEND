@@ -1,7 +1,13 @@
 import React, { createContext, useState } from "react";
 
+/**
+ * Contexto para el provider encargado de trabajar las tareas relacionadas a los mensajes en el modulo 3
+ */
 const MessageContext = createContext();
 
+/**
+ * Clase para gestionar el autor y el contenido de un mensaje
+ */
 class Message {
   constructor(owner, message) {
     this.owner = owner;
@@ -9,34 +15,78 @@ class Message {
   }
 }
 
+/**
+ * Componente ChatProvider para el manejo de mensajes en el chat.
+ * @param {Object} props - Propiedades del componente.
+ * @param {ReactNode} props.children - Los elementos secundarios del componente.
+ * @returns {JSX.Element} El componente ChatProvider con el contexto de mensajes.
+ */
 const ChatProvider = ({ children }) => {
+  /**
+   * Representa un mensaje en el chat.
+   * @typedef {Object} Message
+   * @property {string} owner - El remitente del mensaje.
+   * @property {string} message - El contenido del mensaje.
+   */
+
+  /**
+   * Estado local para almacenar los mensajes del chat.
+   * @type {Message[]}
+   */
   const [messages, setMessages] = useState([
-    new Message("GEPPETTO", "HOLA MUNDO! Soy GEPPETTO, una IA creada para el curso de metodos numéricos en la UTN sede Guanacaste, y estoy aqui para ayudarte con tus problemas matemáticos 👀"),
+    new Message(
+      "GEPPETTO",
+      "HELLO WORLD! Soy GEPPETTO, una IA 🧠 creada para el curso de metodos numéricos en la UTN🎓 sede Guanacaste, y estoy aqui para ayudarte con tus problemas matemáticos 👀"
+    ),
   ]);
 
-  const [loading,setLoading] = useState(false);
+  /**
+   * Estado local para el indicador de carga.
+   * @type {boolean}
+   */
+  const [loading, setLoading] = useState(false);
 
+  /**
+   * Agrega un nuevo mensaje al estado de mensajes.
+   * @param {string} owner - El remitente del mensaje.
+   * @param {string} message - El contenido del mensaje.
+   * @returns {void}
+   */
   const addMessage = (owner, message) => {
     const newMessage = new Message(owner, message);
     setMessages((prevMessages) => [...prevMessages, newMessage]);
   };
 
   /**
-   * Funcion para cambiar el estado de carga en el ChatProvider
+   * Cambia el estado de carga en el componente ChatProvider.
+   * @param {boolean} value - El nuevo valor del estado de carga.
+   * @returns {void}
    */
   const changeLoading = (value) => {
-    setLoading(!value);
-  }
+    setLoading(value);
+  };
 
+  /**
+   * Verifica si el componente está en estado de carga.
+   * @returns {boolean} `true` si el componente está en estado de carga, `false` si no.
+   */
   const isLoading = () => {
     return loading;
-  }
+  };
 
+  /**
+   * Objeto de valor que contiene funciones y datos relevantes para el contexto del chat.
+   * @type {Object}
+   * @property {Message[]} messages - Los mensajes almacenados en el chat.
+   * @property {Function} addMessage - Función para agregar un nuevo mensaje al chat.
+   * @property {Function} isLoading - Función para verificar el estado de carga del componente.
+   * @property {Function} changeLoading - Función para cambiar el estado de carga del componente.
+   */
   const value = {
     messages,
     addMessage,
     isLoading,
-    changeLoading
+    changeLoading,
   };
 
   return (
