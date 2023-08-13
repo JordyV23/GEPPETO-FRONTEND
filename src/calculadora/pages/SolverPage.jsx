@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Button } from "flowbite-react";
-import { ImageModal, ModalTutorial, LoaderContext } from "../components";
+import { ImageModal, ModalTutorial } from "../components";
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { toast } from "react-toastify";
@@ -10,6 +10,7 @@ import "animate.css";
 import "hover.css";
 import { TourProvider } from "@reactour/tour";
 import React, { useContext } from "react";
+import { LoaderContext } from "../providers";
 export const SolverPage = () => {
   //***Hook para manejo de formulario***//
   const { register, handleSubmit } = useForm();

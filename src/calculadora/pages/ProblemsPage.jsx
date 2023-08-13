@@ -2,7 +2,6 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Button, Textarea } from "flowbite-react";
 import {
-  LoaderContext,
   ImageModal,
   ChatComponent,
   InputMessageComponent,
