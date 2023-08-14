@@ -4,7 +4,6 @@ import { Accordion } from "flowbite-react";
 import { ImageModalHome } from "./ImageModalHome.jsx";
 
 export const AccordionLanding = () => {
- 
   return (
     <Accordion
       collapseAll
