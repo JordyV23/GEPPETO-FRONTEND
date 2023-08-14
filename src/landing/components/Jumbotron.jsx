@@ -9,13 +9,9 @@ export const Jumbotron = ({ img, text, titulo }) => {
           <h1 className="font-bold sm:text-5xl lg:text-6xl  text-2xl dark:text-white">
             <Typewriter
               onInit={(typewriter) => {
-                typewriter
-                  .typeString(titulo)
-                  .pauseFor(10000)
-                  .start();
+                typewriter.typeString(titulo).pauseFor(10000).start();
               }}
-
-              options={{delay:30}}
+              options={{ delay: 30 }}
             />
           </h1>
           <p className="p-2  text:sm rounded-lg dark:text-white mt-6 text-justify">

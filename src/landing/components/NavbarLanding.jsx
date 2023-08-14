@@ -18,7 +18,9 @@ export const NavbarLanding = () => {
           className="mr-3 h-6 sm:h-9"
           src="/img/logos/svg/logo-gpto2.svg"
         />
-        <span className=" self-center wor whitespace-nowrap font-bold">GEPPETTO</span>
+        <span className=" self-center wor whitespace-nowrap font-bold">
+          GEPPETTO
+        </span>
       </Navbar.Brand>
 
       <div className="flex order-3">
@@ -34,16 +36,32 @@ export const NavbarLanding = () => {
         <ThemeSwitch />
       </div>
       <Navbar.Collapse className="text-txt-light">
-        <Navbar.Link className='text-txt-light font-bold  p-2 text-base' href="/gpto/home">
+        <Navbar.Link
+          className="text-txt-light font-bold  p-2 text-base"
+          href="/gpto/home"
+        >
           <p>Home</p>
         </Navbar.Link>
 
         {/*<Navbar.Link className='text-txt-light font-bold text-base' href="/gpto/sistemaNumerico">Sistema de Numeración</Navbar.Link>*/}
-        <Navbar.Link className='text-txt-light font-bold text-base' href="#conceptos">Sistema de Numeración</Navbar.Link>
-        <Navbar.Link className='text-txt-light font-bold text-base' href="#funciones">Funciones</Navbar.Link>
-        <Navbar.Link className='text-txt-light font-bold text-base' href="#team">Equipo</Navbar.Link>
-
-
+        <Navbar.Link
+          className="text-txt-light font-bold text-base"
+          href="#conceptos"
+        >
+          Sistema de Numeración
+        </Navbar.Link>
+        <Navbar.Link
+          className="text-txt-light font-bold text-base"
+          href="#funciones"
+        >
+          Funciones
+        </Navbar.Link>
+        <Navbar.Link
+          className="text-txt-light font-bold text-base"
+          href="#team"
+        >
+          Equipo
+        </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );

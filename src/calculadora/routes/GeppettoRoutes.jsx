@@ -2,7 +2,7 @@ import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { ConversionPage, ProblemsPage, SolverPage } from "../pages";
 import { GPTOLayout } from "../Layouts/GPTOLayout";
 import { Loader} from "../components";
-import { ChatProvider, LoaderProvider } from "../providers";
+import { LoaderProvider } from "../providers";
 
 export const GeppettoRoutes = () => {
   return (
