@@ -6,8 +6,11 @@ export const CardLanding = () => {
   return (
     <>
       {FuncionesP.map(({ descripcion, titulo, imagen, link }, i) => (
-        <Link to={link}
-          className="  bg-light-accent max-w-sm  md:h-80 rounded-lg shadow  dark:bg-dark-accent dark:border-dark-accent p-3 hover:bg-light-accent-dark dark:hover:bg-dark-accent-dark" key={i} >
+        <Link
+          to={link}
+          className="  bg-light-accent max-w-sm  md:h-80 rounded-lg shadow  dark:bg-dark-accent dark:border-dark-accent p-3 hover:bg-light-accent-dark dark:hover:bg-dark-accent-dark"
+          key={i}
+        >
           <div>
             <img
               className="rounded-t-lg mx-auto my-auto "
