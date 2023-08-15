@@ -58,7 +58,7 @@ export const InputMessageComponent = () => {
 
         // Verifica el status de la respuesta de la API
         if (datos.Status === "true") {
-          if ((datos.Respuesta === "")) {
+          if (datos.Respuesta === "") {
             addMessage("GEPPETTO", "Lo siento, desconozco la respuesta🙃🫤");
           } else {
             addMessage("GEPPETTO", datos.Respuesta);
@@ -87,8 +87,9 @@ export const InputMessageComponent = () => {
 
   return (
     <>
-      <div className="flex flex-row items-center h-16 rounded-xl w-full px-4">
-        <div className="flex-grow ml-4">
+      <div className="flex flex-col md:flex-row items-center md:h-16 rounded-xl w-full px-4">
+        <ImageModal imagenes={imagenes} />
+        <div className="flex-grow mb-4 md:mb-0 md:ml-4 md:w-3/5">
           <div className="relative w-full">
             <input
               id="inputMessage"
@@ -97,17 +98,17 @@ export const InputMessageComponent = () => {
               value={message}
               onChange={updateValue}
               onKeyDown={(e) => e.key === "Enter" && onSendMessage()}
-              className="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
+              className="flex w-full min-w-[100px] md:min-w-0 border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
             />
           </div>
         </div>
 
-        <div className="ml-4">
+        <div className="md:ml-4 md:w-2/5">
           <button
             id="sendBtn"
             disabled={loading}
             onClick={onSendMessage}
-            className="flex items-center justify-center bg-light-accent hover:bg-light-accent-2 dark:bg-dark-accent dark:hover:bg-dark-accent-dark rounded-xl text-white px-4 py-1 flex-shrink-0"
+            className="flex items-center justify-center bg-light-accent hover:bg-light-accent-2 dark:bg-dark-accent dark:hover:bg-dark-accent-dark rounded-xl text-white px-4 py-1 w-full md:w-auto"
           >
             <span>Enviar</span>
             <span className="ml-2">
@@ -115,8 +116,6 @@ export const InputMessageComponent = () => {
             </span>
           </button>
         </div>
-
-        <ImageModal imagenes={imagenes} />
       </div>
     </>
   );
